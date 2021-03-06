@@ -1,0 +1,14 @@
+.D-layout{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  .navigation{
+    background-color: aquamarine;
+    width: 210px;
+    height: 100%;
+  }
+  .content{
+    flex: 1;
+    background-color: bisque;
+  }
+}

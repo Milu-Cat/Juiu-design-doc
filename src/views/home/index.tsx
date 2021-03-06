@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
+// import Layout from '../../layout/index';
 
-const Home = () => {
-  return
-  <div>
-    首页
-  </div>
+const Home:FC = () => {
+  return (
+    // <Layout/>
+    <div></div>
+  )
 }
 
 export default Home
