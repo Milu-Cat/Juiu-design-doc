@@ -3,10 +3,11 @@ import {Input} from 'juiu-design';
 import { useHistory, withRouter } from "react-router-dom";
 
 interface LoginFormOptions {
-
+  ChangeLoad: (val:boolean)=> void
 }
 
 const LoginForm: FC<LoginFormOptions> = (props) => {
+  const { ChangeLoad } = props
   const [iconStyle, setIconStyle] = useState(-1)
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
@@ -33,8 +34,9 @@ const LoginForm: FC<LoginFormOptions> = (props) => {
       alert('请输入用户名或密码！')
       return
     }
+    ChangeLoad(true)
     localStorage.setItem('jujiu-admin-user', user)
-    history.push('/')
+    history.push('/home')
   }
   const focus = {
     width: '20px',
@@ -61,4 +63,4 @@ const LoginForm: FC<LoginFormOptions> = (props) => {
     </div>
   )
 }
-export default withRouter(LoginForm)
+export default LoginForm

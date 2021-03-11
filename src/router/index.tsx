@@ -41,7 +41,7 @@ export interface RouterOptions {
 
 const HomeRouter:RouterOptions = {
   name: 'home',
-  path: '/',
+  path: '/home',
   component: Home,
 }
 const ButtonRouter:RouterOptions = {

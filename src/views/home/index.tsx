@@ -3,8 +3,7 @@ import React, {FC} from 'react';
 
 const Home:FC = () => {
   return (
-    // <Layout/>
-    <div></div>
+    <div>home</div>
   )
 }
 

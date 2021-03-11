@@ -1,11 +1,11 @@
 import React,{FC} from 'react';
-import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
+import { Redirect, Route, Switch, withRouter, useHistory } from 'react-router-dom'
 import Navigation from '../components/navigation/index';
 import './index.scss';
 import Router from '../router/index';
 import PrivateRoute from '../components/privateRoute';
 
-const Layout:FC = () => {
+const Layout: FC = () => {
   return (
     <div className="D-layout">
       <div className="navigation">
@@ -15,9 +15,8 @@ const Layout:FC = () => {
         <Switch>
           {
             Router.map(item => {
-              // return (<Route exact path={item.path} component={item.component} key={item.path}></Route>)
               return (
-                <PrivateRoute path={item.path} component={item.component} key={item.path}/>
+                <PrivateRoute path={item.path} component={item.component as React.ReactType} key={item.path}/>
               )
             })
           }
