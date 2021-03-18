@@ -3,12 +3,14 @@
   height: 100%;
   width: 100%;
   .navigation{
-    background-color: aquamarine;
+    padding-top: 20px;
+    background-color: rgb(48, 65, 86);
     width: 210px;
     height: 100%;
   }
   .content{
     flex: 1;
     background-color: bisque;
+    overflow-x: hidden;
   }
 }

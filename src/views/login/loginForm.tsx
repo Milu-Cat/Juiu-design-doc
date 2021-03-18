@@ -1,17 +1,25 @@
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 import {Input} from 'juiu-design';
 import { useHistory, withRouter } from "react-router-dom";
+import { LoginContext } from './index';
+import classNames from 'classnames';
+
 
 interface LoginFormOptions {
-  ChangeLoad: (val:boolean)=> void
+  className: string
 }
 
 const LoginForm: FC<LoginFormOptions> = (props) => {
-  const { ChangeLoad } = props
+  const { className } = props
   const [iconStyle, setIconStyle] = useState(-1)
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
+  const context = useContext(LoginContext)
+  const changeLoad = context.ChangeLoad as (val: boolean) => void
+  const changeLoginView = context.ChangeLoginView as (val: boolean) => void
+  const classes = classNames('login-form', className)
   let history = useHistory();
+  let timer
   function HandleFocus(type:string) {
     if (type === 'user'){
       setIconStyle(1)
@@ -34,16 +42,24 @@ const LoginForm: FC<LoginFormOptions> = (props) => {
       alert('请输入用户名或密码！')
       return
     }
-    ChangeLoad(true)
-    localStorage.setItem('jujiu-admin-user', user)
-    history.push('/home')
+    changeLoad(true) 
+    timer = setTimeout(() => {
+      localStorage.setItem('jujiu-admin-user', user)
+      history.push('/home')
+      changeLoad(false)
+    }, 500);
   }
+  function toRegister() {
+    changeLoginView(false)
+    // setTimeout(() => props.form.resetFields(), 500)
+  }
+
   const focus = {
     width: '20px',
     opacity: 1
   }
   return (
-    <div className="login-form">
+    <div className={classes}>
       <h3>管理员登录</h3>
       <div className="form-content">
         <div className="user">
@@ -56,7 +72,7 @@ const LoginForm: FC<LoginFormOptions> = (props) => {
         </div>
         <div className="bottom-button">
           <span onClick={ submit }>登录</span>
-          <span>注册</span>
+          <span onClick={ toRegister }>注册</span>
         </div>
         <span className="prompt">欢迎登陆后台管理系统</span>
       </div>

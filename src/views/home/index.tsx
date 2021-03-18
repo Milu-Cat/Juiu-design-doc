@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
-// import Layout from '../../layout/index';
+import './style.scss'
 
 const Home:FC = () => {
   return (
-    <div>home</div>
+    <div className="home"></div>
   )
 }
 

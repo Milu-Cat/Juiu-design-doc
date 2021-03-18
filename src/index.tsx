@@ -5,6 +5,8 @@ import './index.css';
 import 'juiu-design/dist/index.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './styles/index.scss';
+import 'animate.css';
 
 ReactDOM.render(
   <BrowserRouter>

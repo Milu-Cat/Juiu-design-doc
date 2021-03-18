@@ -34,6 +34,7 @@ import Alert from "../views/alert/index"
 // export default routers
 export interface RouterOptions {
   name: string,
+  displayName: string,
   path: string,
   component?: React.FC<{}>,
   children?: RouterOptions[]
@@ -41,24 +42,40 @@ export interface RouterOptions {
 
 const HomeRouter:RouterOptions = {
   name: 'home',
+  displayName: '首页',
   path: '/home',
-  component: Home,
+  component: Home
 }
-const ButtonRouter:RouterOptions = {
-  name: 'button',
-  path: '/button',
-  component: Button,
+const ComponentsRouter: RouterOptions = {
+  name: 'components',
+  displayName: '组件',
+  path: '/components',
+  children: [
+    {
+      name: 'button',
+      displayName: 'button',
+      path: '/components/button',
+      component: Button
+    },
+    {
+      name: 'alert',
+      displayName: 'alert',
+      path: '/components/alert',
+      component: Alert
+    }
+  ]
+ 
 }
-const AlertRouter:RouterOptions = {
-  name: 'alert',
-  path: '/alert',
-  component: Alert,
-}
+// const AlertRouter:RouterOptions = {
+//   name: 'alert',
+//   path: '/alert',
+//   component: Alert,
+// }
 
 const Router = [
   HomeRouter,
-  ButtonRouter,
-  AlertRouter
+  ComponentsRouter,
+  // AlertRouter
 ]
 
 export default Router

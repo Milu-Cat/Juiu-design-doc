@@ -8,16 +8,18 @@ import Router,{RouterOptions} from '../../router/index'
 const Navigation: FC = (props) => { //#263445 
   function navList(list: RouterOptions[]) {
     return list.map(item => {
-      if (item.children && item.children.length) {
-        return (
-          <Menu.Item>
-            <Link to={item.path}>{ item.name }</Link>
-          </Menu.Item>
-        )
+      if (item.children) {
+        return item.children.length ?(
+          <Menu.SubMenu title={item.displayName} key={item.path}>
+            {
+              navList(item.children)
+            }
+          </Menu.SubMenu>
+        ): ''
       } else {
         return (
           <Menu.Item key={item.path}>
-            <Link to={item.path}>{ item.name }</Link>
+            <Link to={item.path}>{ item.displayName }</Link>
           </Menu.Item>
         )
       }

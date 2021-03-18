@@ -1,4 +1,8 @@
+
 .navigation{
+  .menu-vertical{
+    border:none
+  }
   .menu-item{
     padding: 0;
     a{
@@ -13,6 +17,27 @@
     background-color: #263445;
     a{
       color: rgb(64, 158, 255)
+    }
+  }
+  .submenu-item{
+    .submenu-title{
+      padding: 15px 15px 15px 20px;
+    }
+    &:hover{
+      background-color: transparent;
+      .J-submenu a{
+        color: rgb(191, 203, 217);
+      }
+    }
+    .menu-item{
+      padding: 0;
+      padding-left: 1rem;
+      color: rgb(191, 203, 217);
+      &:hover{
+        a{
+          color: rgb(64, 158, 255)
+        }
+      }
     }
   }
   .is-active{
