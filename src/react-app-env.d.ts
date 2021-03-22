@@ -35,7 +35,7 @@ declare module '*.jpeg' {
 }
 
 declare module '*.png' {
-  const src: string;
+  const logoImgUrlsrc: string;
   export default src;
 }
 

@@ -1,9 +1,19 @@
-import React,{FC, ReactElement} from 'react';
-import { Redirect, Route, Switch, withRouter, useHistory } from 'react-router-dom'
-import Navigation from '../components/navigation/index';
-import './index.scss';
-import Router, { RouterOptions } from '../router/index';
-import PrivateRoute, { PrivateRouteOptions } from '../components/privateRoute';
+import React, { FC, ReactElement } from "react";
+import {  Link } from 'react-router-dom';
+import {
+  Redirect,
+  Route,
+  Switch,
+  withRouter,
+  useHistory,
+  NavLink,
+} from "react-router-dom";
+import Navigation from "../components/navigation/index";
+import "./index.scss";
+import Router, { RouterOptions } from "../router/index";
+import PrivateRoute, { PrivateRouteOptions } from "../components/privateRoute";
+import { Dropdown } from 'juiu-design';
+import { getRouterInfo } from '../utils/pagesUtils';
 
 const Layout: FC = () => {
   // function setRoute(arg: RouterOptions[]){
@@ -17,38 +27,84 @@ const Layout: FC = () => {
   //   flatArr(arg)
   //   return routeArr
   // }
-  // function getRoute():any {
-  //   setRoute(Router).map(item => {
-  //     return item
-  //   })
-  // }
+  const getCrumbs = () => {
+    const pathName = window.location.pathname === '/' ? "Home" : window.location.pathname.slice(1)
+    const pathNameArr = pathName.split('/')
+    let res:any[] = []
+    pathNameArr.length && pathNameArr.map((v, index) => {
+      const first = v[0].toUpperCase()
+      const other = v.slice(1) 
+      v = first + other
+      if (index < pathNameArr.length - 1) {
+        res.push(<span key={v}>{v}</span>)
+        res.push(<span key={index}>/</span>)
+      } else {
+        res.push(<span key={v}>{v}</span>)
+      }
+    })
+    return res
+  }
+  
+  console.log(getRouterInfo('string'))
 
-  function setRoute(list: RouterOptions[]):any {
-    return list.map(item => {
-      if (item.children) {
-        return item.children.length ? setRoute(item.children) : null
-      } else {
-        return (
-           <PrivateRoute path={item.path} component={item.component as React.ReactType} key={item.path}/>
-        )
-      }
-    })
-  }
-console.log(setRoute(Router))
+  function setRoute(list: RouterOptions[]): any {
+    return list.map((item) => {
+      if (item.children) {
+        return item.children.length ? setRoute(item.children) : null;
+      } else {
+        return (
+          <PrivateRoute
+            path={item.path}
+            component={item.component as React.ReactType}
+            key={item.path}
+          />
+        );
+      }
+    });
+  }
+
+  const overlay = (
+    <ul className="handle-list">
+      <Link to='/login'>
+        <li>Login Out</li>
+      </Link>
+    </ul>
+  )
   return (
     <div className="D-layout">
-      <div className="navigation">
-        <Navigation/>
+      <div className="layout-left">
+        <div className="header">
+            <div className="logo"></div>
+          <span>JUJIU ANTD</span>
+        </div>
+        <div className="navigation">
+          <Navigation />
+        </div>
       </div>
-      <div className="content">
-        <Switch>
-          {
-            setRoute(Router)
-          }
-        </Switch>
+      <div className="layout-right">
+        <div className="header">
+          <div className="logo-contain">
+            <span>Hi,Jujiu!</span>
+            <Dropdown overlay={overlay}>
+              <span className="admin-logo"></span>
+            </Dropdown>
+          </div>
+        </div>
+        <div className="content">
+          <div className="crumbs">
+            <i className="iconfont icondaohang" style={{ marginRight: "8px", fontSize: '15px' }}></i>
+            {
+              getCrumbs()
+            }
+          </div>
+          <div className="views">
+            <Switch>{setRoute(Router)}</Switch>
+          </div>
+        </div>
       </div>
+      
     </div>
-  )
-}
+  );
+};
 
-export default withRouter(Layout) 
+export default withRouter(Layout);

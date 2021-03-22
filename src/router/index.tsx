@@ -37,31 +37,36 @@ export interface RouterOptions {
   displayName: string,
   path: string,
   component?: React.FC<{}>,
-  children?: RouterOptions[]
+  children?: RouterOptions[],
+  index?:string
 }
 
 const HomeRouter:RouterOptions = {
   name: 'home',
   displayName: '首页',
   path: '/home',
-  component: Home
+  component: Home,
+  index: 'home'
 }
 const ComponentsRouter: RouterOptions = {
   name: 'components',
   displayName: '组件',
   path: '/components',
+  index: 'components',
   children: [
     {
       name: 'button',
       displayName: 'button',
       path: '/components/button',
-      component: Button
+      component: Button,
+      index: 'components-button'
     },
     {
       name: 'alert',
       displayName: 'alert',
       path: '/components/alert',
-      component: Alert
+      component: Alert,
+      index: 'components-alert'
     }
   ]
  
