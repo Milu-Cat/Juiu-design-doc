@@ -1,15 +1,19 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import {  Link } from 'react-router-dom';
 import { Menu } from 'juiu-design';
 import './style.scss'
-import Router,{RouterOptions} from '../../router/index'
+import Router, { RouterOptions } from '../../router/index'
+import { getRouterInfo, findParentsById } from '../../utils/pagesUtils';
 
-const Navigation: FC = (props) => { //#263445 
+const Navigation: FC = (props, ref) => { //#263445 
+  const defaultIndex = useState(getRouterInfo('string') as string)[0]
+  const defaultOpenSubMenus = findParentsById(Router, defaultIndex, 'index')
+
   function navList(list: RouterOptions[]) {
     return list.map(item => {
       if (item.children) {
         return item.children.length ?(
-          <Menu.SubMenu title={item.displayName} key={item.path} index={item.index}>
+          <Menu.SubMenu title={item.displayName} key={item.index} index={item.index}>
             {
               navList(item.children)
             }
@@ -17,7 +21,7 @@ const Navigation: FC = (props) => { //#263445
         ): ''
       } else {
         return (
-          <Menu.Item key={item.path} index={item.index}>
+          <Menu.Item key={item.index} index={item.index}>
             <Link to={item.path}>{ item.displayName }</Link>
           </Menu.Item>
         )
@@ -25,33 +29,12 @@ const Navigation: FC = (props) => { //#263445
     })
   }
 
-  const defaultIndex = ():string => {
-    const arr = window.location.pathname.slice(1).split('/')
-    let res = ''
-    if (arr.length === 1) {
-      if (arr[0] === '') {
-        return 'home'
-      } else {
-        return arr[0]
-      }
-    } else {
-      arr.map(v => {
-        res += v
-        res += '-'
-      })
-    }
-    return res.slice(0, res.length-1)
-  } 
-  // const defaultOpenSubMenus = 
-// console.log(defaultIndex())
   return (
-    <div> 
-      <Menu className="navigation" mode="vertical" defaultIndex={defaultIndex()} style={{ margin: 0, width: '100%', color: 'rgb(191, 203, 217)', height: '100%', backgroundColor: '' }}>
+      <Menu className="navigation" mode="vertical" defaultIndex={ defaultIndex } defaultOpenSubMenus={ defaultOpenSubMenus } style={{ margin: 0, width: '100%', color: 'rgb(191, 203, 217)', height: '100%', backgroundColor: '' }}>
         {
           navList(Router)
         }
       </Menu>
-    </div>
   )
 }
 

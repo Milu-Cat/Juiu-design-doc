@@ -28,8 +28,7 @@ const Layout: FC = () => {
   //   return routeArr
   // }
   const getCrumbs = () => {
-    const pathName = window.location.pathname === '/' ? "Home" : window.location.pathname.slice(1)
-    const pathNameArr = pathName.split('/')
+    const pathNameArr = getRouterInfo('array') as string[]
     let res:any[] = []
     pathNameArr.length && pathNameArr.map((v, index) => {
       const first = v[0].toUpperCase()
@@ -45,8 +44,6 @@ const Layout: FC = () => {
     return res
   }
   
-  console.log(getRouterInfo('string'))
-
   function setRoute(list: RouterOptions[]): any {
     return list.map((item) => {
       if (item.children) {
@@ -65,6 +62,8 @@ const Layout: FC = () => {
 
   const overlay = (
     <ul className="handle-list">
+      <li onClick={ ()=> { window.open("https://github.com/Milu-Cat/Juiu-design-doc") }}>Github</li>
+      <li onClick={ ()=> { window.open("https://www.npmjs.com/package/juiu-design") }}>Npm</li>
       <Link to='/login'>
         <li>Login Out</li>
       </Link>
@@ -102,7 +101,6 @@ const Layout: FC = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

@@ -1,35 +1,35 @@
 .navigation{
+  user-select: none;
   .menu-vertical{
     border:none
   }
   .menu-item{
     padding: 0;
+    margin-bottom: 5px;
     a{
       color: #666;
       display: inline-block;
       height: 100%;
       width: 100%;
-      padding: 15px 0 15px 20px;
+      padding: 10px 0 10px 20px;
     }
   }
   .menu-item:hover{
-    // background-color: #263445;
     a{
-      color: rgb(64, 158, 255)
+      color: rgb(64, 158, 255)!important
     }
   }
   .submenu-item{
-    .submenu-title{
-      padding: 15px 15px 15px 20px;
-      color: #666;
-      &:hover{
-        color: rgb(64, 158, 255)
+    &:hover{
+      a {
+        color: #666!important;
       }
     }
-    &:hover{
-      // background-color: transparent;
-      .J-submenu a{
-        color: #666;
+    .submenu-title{
+      padding: 15px 15px 15px 20px;
+      color: #666!important;
+      &:hover{
+        color: rgb(64, 158, 255)!important
       }
     }
     .menu-item{
@@ -38,16 +38,13 @@
       color: #666;
       &:hover{
         a{
-          color: rgb(64, 158, 255)
+          color: rgb(64, 158, 255)!important
         }
       }
     }
   }
   .is-active{
-    // background-color: rgb(48, 65, 86)!important;
-    &:hover{
-      // background-color: #263445!important;
-    }
+    border-right: 3px solid #0d6efd;
     a{
       color: rgb(64, 158, 255)!important;
     }

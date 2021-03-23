@@ -8,11 +8,15 @@ export interface PrivateRouteOptions{
   component: React.ReactType,
 }
 
-const PrivateRoute: FC<PrivateRouteOptions> = ({ component:Component, key, ...rest }) => {
+const PrivateRoute: FC<PrivateRouteOptions> = ({ component: Component, key, ...rest }) => {
+  const routeName = window.location.pathname
   return (
     <Route {...rest} render={(props) => (
       !!getLoginState()
-        ? <Component {...props} key={ key }/>
+        ? routeName === '/' ? <Redirect  key={ key } to={{
+          pathname: '/home',
+          state: {from: props.location}
+        }}/> : <Component {...props} key={ key }/>
         : <Redirect  key={ key } to={{
           pathname: '/login',
           state: {from: props.location}

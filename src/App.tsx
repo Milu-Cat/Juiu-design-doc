@@ -11,7 +11,6 @@ function App() {
     <div className="App">
       <Switch>
         <Route path='/login' component={Login}/>
-        {/* <Route path='/' component={Layout}/> */}
         <PrivateRoute path='/' component={Layout}/>
       </Switch>
     </div>
