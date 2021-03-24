@@ -26,11 +26,12 @@
 //   },
 // ]
 
-import Home from "../views/home/index"
-import Button from "../views/button/index"
-import Alert from "../views/alert/index"
-import Stretch from "../views/stretch/index"
-
+import Home from "../views/home"
+import Button from "../views/button"
+import Alert from "../views/alert"
+import Stretch from "../views/stretch"
+import Dropdown from '../views/dropdown';
+import Menu from '../views/menu';
 
 // export default routers
 export interface RouterOptions {
@@ -81,6 +82,22 @@ const ComponentsRouter: RouterOptions = {
       component: Stretch,
       index: 'components-stretch',
       id: 'stretch'
+    },
+    {
+      name: 'dropdown',
+      displayName: 'Dropdown',
+      path: '/components/dropdown',
+      component: Dropdown,
+      index: 'components-dropdown',
+      id: 'dropdown'
+    },
+    {
+      name: 'menu',
+      displayName: 'Menu',
+      path: '/components/menu',
+      component: Menu,
+      index: 'components-menu',
+      id: 'menu'
     }
   ]
  

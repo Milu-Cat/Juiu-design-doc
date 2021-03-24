@@ -11,7 +11,7 @@ export interface PrivateRouteOptions{
 const PrivateRoute: FC<PrivateRouteOptions> = ({ component: Component, key, ...rest }) => {
   const routeName = window.location.pathname
   return (
-    <Route {...rest} render={(props) => (
+    <Route exact {...rest} render={(props) => (
       !!getLoginState()
         ? routeName === '/' ? <Redirect  key={ key } to={{
           pathname: '/home',

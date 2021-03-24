@@ -3,7 +3,7 @@ import './style.scss'
 
 const Home:FC = () => {
   return (
-    <div className="home">home</div>
+    <div className="home"></div>
   )
 }
 

@@ -1,0 +1,13 @@
+@import '../../styles/mixin_doc-table.scss';
+
+.menu-view{
+  padding: 20px;
+  .menu-code{
+    border-radius: 6px;
+    background: #f0f0f0;
+    font-size: 16px;
+    margin-top: 50px;
+    padding: 24px
+  }
+  @include doc-table-style(100%);
+}

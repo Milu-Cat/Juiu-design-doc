@@ -1,0 +1,32 @@
+@import '../../styles/mixin_doc-table.scss';
+
+.dropdown-view{
+  padding: 20px;
+  .dropdown-code{
+    border-radius: 6px;
+    background: #f0f0f0;
+    font-size: 16px;
+    margin-top: 50px;
+    padding: 24px
+  }
+  .J-dropdown .J-dropdown-link{
+    color: #1890ff;
+  }
+  @include doc-table-style(100%);
+}
+
+.handle-list{
+  background: #fff;
+  padding: 5px 20px;
+  margin: 0;
+  a{
+    display: inline-block;
+    width: 100%;
+  }
+  li{
+    padding: 3px 0;
+    &:hover{
+      color: #1890ff;
+    }
+  }
+}

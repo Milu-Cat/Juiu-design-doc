@@ -1,5 +1,4 @@
 import React, { FC, ReactElement } from "react";
-import {  Link } from 'react-router-dom';
 import {
   Redirect,
   Route,
@@ -7,6 +6,8 @@ import {
   withRouter,
   useHistory,
   NavLink,
+  Link,
+  useLocation
 } from "react-router-dom";
 import Navigation from "../components/navigation/index";
 import "./index.scss";
@@ -14,6 +15,7 @@ import Router, { RouterOptions } from "../router/index";
 import PrivateRoute, { PrivateRouteOptions } from "../components/privateRoute";
 import { Dropdown } from 'juiu-design';
 import { getRouterInfo } from '../utils/pagesUtils';
+import Empty from '../views/empty';
 
 const Layout: FC = () => {
   // function setRoute(arg: RouterOptions[]){
@@ -54,7 +56,7 @@ const Layout: FC = () => {
             path={item.path}
             component={item.component as React.ReactType}
             key={item.path}
-          />
+            />
         );
       }
     });
@@ -69,6 +71,10 @@ const Layout: FC = () => {
       </Link>
     </ul>
   )
+
+  const location = useLocation()
+  const RedirectAs404 = () => <Redirect to={Object.assign({}, location, { state: { is404: true } })} />
+  
   return (
     <div className="D-layout">
       <div className="layout-left">
@@ -97,7 +103,10 @@ const Layout: FC = () => {
             }
           </div>
           <div className="views">
-            <Switch>{setRoute(Router)}</Switch>
+            <Switch>
+              {setRoute(Router)}
+              <Redirect from="*" to="/404"></Redirect>
+            </Switch>
           </div>
         </div>
       </div>

@@ -78,12 +78,5 @@ const ButtonView: FC = (props) => {
     </div>
   )
 }
-interface BaseButtonProps {
-  className?: string;
-  size?: ButtonSize;
-  disabled?: boolean;
-  btnType?: ButtonType;
-  children: React.ReactNode;
-  href?: string
-}
+
 export default ButtonView
