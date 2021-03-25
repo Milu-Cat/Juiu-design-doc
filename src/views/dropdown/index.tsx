@@ -10,17 +10,12 @@ const DropdownView: FC = (props) => {
   <Dropdown overlay={overlay} >Hover it</Dropdown>
   <Dropdown overlay={overlay} trigger="click" >Click it</Dropdown>`
 
-  // const overlay = (
-  //   <ul className="handle-list">
-  //     <li onClick={ ()=> { window.open("https://github.com/Milu-Cat/Juiu-design-doc") }}>Github</li>
-  //     <li onClick={() => { window.open("https://www.npmjs.com/package/juiu-design") }}>Npm</li>
-  //   </ul>
-  // )
-  const overlay:FC = () => {
-    return (
-      <div>qwdwq</div>
-    )
-  }
+  const overlay = (
+    <ul className="handle-list">
+      <li onClick={ ()=> { window.open("https://github.com/Milu-Cat/Juiu-design-doc") }}>Github</li>
+      <li onClick={() => { window.open("https://www.npmjs.com/package/juiu-design") }}>Npm</li>
+    </ul>
+  )
 
   return (
     <div className="dropdown-view">

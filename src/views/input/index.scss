@@ -1,16 +1,17 @@
 @import '../../styles/mixin_doc-table.scss';
 
-.menu-view{
+.input-view{
   padding: 20px;
-  .menu-code{
+  .input-code{
     border-radius: 6px;
     background: #f0f0f0;
     font-size: 16px;
     margin-top: 50px;
     padding: 24px
   }
-  @include doc-table-style(100%);
-  i{
-    font-size: 12px;
+  .input-container{
+    width: 500px;
+    margin: 0 auto;
   }
+  @include doc-table-style(100%);
 }

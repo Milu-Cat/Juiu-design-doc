@@ -32,6 +32,8 @@ import Alert from "../views/alert"
 import Stretch from "../views/stretch"
 import Dropdown from '../views/dropdown';
 import Menu from '../views/menu';
+import Input from '../views/input';
+import Icon from '../views/icon';
 
 // export default routers
 export interface RouterOptions {
@@ -98,6 +100,22 @@ const ComponentsRouter: RouterOptions = {
       component: Menu,
       index: 'components-menu',
       id: 'menu'
+    },
+    {
+      name: 'input',
+      displayName: 'Input',
+      path: '/components/input',
+      component: Input,
+      index: 'components-input',
+      id: 'input'
+    },
+    {
+      name: 'icon',
+      displayName: 'Icon',
+      path: '/components/icon',
+      component: Icon,
+      index: 'components-icon',
+      id: 'icon'
     }
   ]
  
