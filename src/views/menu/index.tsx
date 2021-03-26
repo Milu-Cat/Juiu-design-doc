@@ -80,7 +80,7 @@ const MenuView: FC = () => {
             <td>-</td>
           </tr>
           <tr>
-            <td>onSelect</td>
+            <td>onSelect?</td>
             <td>点击菜单项Menu.Item回调</td>
             <td>'(selectedIndex: string) ={'>'} void'</td>
             <td>-</td>
@@ -135,7 +135,13 @@ const MenuView: FC = () => {
             <td>title</td>
             <td>SubMenu的名称</td>
             <td>string</td>
-            <td></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>icon?</td>
+            <td>title左边的图标</td>
+            <td>string</td>
+            <td>-</td>
           </tr>
         </tbody>
       </table>

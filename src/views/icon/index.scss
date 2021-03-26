@@ -9,5 +9,34 @@
     margin-top: 50px;
     padding: 24px
   }
+  .dib-box{
+    display: flex;
+    flex-wrap: wrap;
+    li{
+      width: 100px;
+      margin: 0 20px 15px 0;
+      text-align: center;
+      i{
+        font-size: 35px;
+        cursor: pointer;
+        display: block;
+        height: 100px;
+        line-height: 100px;
+        transition: all .3s;
+        &:hover{
+          font-size: 60px;
+        }
+      }
+      div{
+        font-size: 12px;
+      }
+      div:last-child{
+        cursor: pointer;
+        &:hover{
+          color: #1890ff
+        }
+      }
+    }
+  }
   @include doc-table-style(100%);
 }

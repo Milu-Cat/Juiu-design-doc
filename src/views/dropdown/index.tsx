@@ -44,7 +44,7 @@ const DropdownView: FC = (props) => {
             <td>-</td>
           </tr>
           <tr>
-            <td>trigger</td>
+            <td>trigger?</td>
             <td>触发类型</td>
             <td>string</td>
             <td>hover,click</td>

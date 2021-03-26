@@ -54,13 +54,13 @@ const InputView: FC = () => {
         </thead>
         <tbody className="doc-body">
           <tr>
-            <td>size</td>
+            <td>size?</td>
             <td>input的规格</td>
             <td>InputSize：string</td>
             <td>'lg' | 'sm'</td>
           </tr>
           <tr>
-            <td>disabled</td>
+            <td>disabled?</td>
             <td>是否禁用</td>
             <td>boolean</td>
             <td>true,false</td>
@@ -72,19 +72,19 @@ const InputView: FC = () => {
             <td>Primary = 'primary',Default = 'default',Danger = 'danger',Warning = 'warning',Success = 'success',Link = 'link'</td>
           </tr> */}
           <tr>
-            <td>prepend</td>
+            <td>prepend?</td>
             <td>input的前缀</td>
             <td>string | ReactElement</td>
             <td>-</td>
           </tr>
           <tr>
-            <td>append</td>
+            <td>append?</td>
             <td>input的后缀</td>
             <td>string | ReactElement</td>
             <td>-</td>
           </tr>
           <tr>
-            <td>onChange</td>
+            <td>onChange?</td>
             <td>修改内容后触发</td>
             <td>{`(e: ChangeEvent<HTMLInputElement>) => void`}</td>
             <td>-</td>

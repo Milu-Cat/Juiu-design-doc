@@ -58,3 +58,17 @@ export function findParentsById(arr: RouterOptions[], id:string, atrr:string) {
     }(arr, index)
   return hasParentId ? parentIds : []
 }
+
+export function copyText(txt:string){
+  // meg = meg || 'The coupon has been copied successfully'
+  // btn = btn || 'OK'
+ var input = document.createElement("input");
+ document.body.appendChild(input)
+ input.setAttribute("value", txt)
+ input.select();
+ if (document.execCommand("copy")) {
+     document.execCommand("copy")
+ }
+ document.body.removeChild(input)
+//  alert && alert(meg, btn)
+}

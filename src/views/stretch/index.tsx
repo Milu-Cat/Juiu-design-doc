@@ -30,37 +30,37 @@ const StretchView: FC = (props) => {
         </thead>
         <tbody className="doc-body">
           <tr>
-            <td>defaultWith</td>
+            <td>defaultWith?</td>
             <td>Stretch初始宽度</td>
             <td>string</td>
             <td>'500','50%','500px'</td>
           </tr>
           <tr>
-            <td>defaultHeight</td>
+            <td>defaultHeight?</td>
             <td>Stretch初始高度</td>
             <td>string</td>
             <td>'500','50%','500px'</td>
           </tr>
           <tr>
-            <td>fullWidth</td>
+            <td>fullWidth?</td>
             <td>宽度充满父元素相当于defaultWith="100%", 横向不可延伸</td>
             <td>boolean</td>
             <td>-</td>
           </tr>
           <tr>
-            <td>fullHeight</td>
+            <td>fullHeight?</td>
             <td>高度充满父元素相当于defaultHeight="100%", 纵向向不可延伸</td>
             <td>boolean</td>
             <td>-</td>
           </tr>
           <tr>
-            <td>stretchXDisabled</td>
+            <td>stretchXDisabled?</td>
             <td>禁用横向延伸</td>
             <td>boolean</td>
             <td>-</td>
           </tr>
           <tr>
-            <td>stretchYDisabled</td>
+            <td>stretchYDisabled?</td>
             <td>禁用纵向延伸</td>
             <td>boolean</td>
             <td>-</td>

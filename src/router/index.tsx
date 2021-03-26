@@ -34,6 +34,9 @@ import Dropdown from '../views/dropdown';
 import Menu from '../views/menu';
 import Input from '../views/input';
 import Icon from '../views/icon';
+import Upload from '../views/upload';
+import AutoComplete from '../views/autoComplete';
+import Progress from '../views/progress';
 
 // export default routers
 export interface RouterOptions {
@@ -116,7 +119,32 @@ const ComponentsRouter: RouterOptions = {
       component: Icon,
       index: 'components-icon',
       id: 'icon'
+    },
+    {
+      name: 'upload',
+      displayName: 'Upload',
+      path: '/components/upload',
+      component: Upload,
+      index: 'components-upload',
+      id: 'upload'
+    },
+    {
+      name: 'auto-complete',
+      displayName: 'AutoComplete',
+      path: '/components/auto-complete',
+      component: AutoComplete,
+      index: 'components-auto-complete',
+      id: 'auto-complete'
+    },
+    {
+      name: 'progress',
+      displayName: 'Progress',
+      path: '/components/progress',
+      component:  Progress,
+      index: 'components-progress',
+      id: 'progress'
     }
+    
   ]
  
 }

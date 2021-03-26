@@ -43,32 +43,32 @@ const ButtonView: FC = (props) => {
         </thead>
         <tbody className="doc-body">
           <tr>
-            <td>size</td>
+            <td>size?</td>
             <td>button的规格</td>
             <td>ButtonSize：string</td>
             <td>Large = 'lg',
               Small = 'sm'</td>
           </tr>
           <tr>
-            <td>disabled</td>
+            <td>disabled?</td>
             <td>是否禁用</td>
             <td>boolean</td>
             <td>true,false</td>
           </tr>
           <tr>
-            <td>btnType</td>
+            <td>btnType?</td>
             <td>button的类型</td>
             <td>ButtonType：string</td>
             <td>Primary = 'primary',Default = 'default',Danger = 'danger',Warning = 'warning',Success = 'success',Link = 'link'</td>
           </tr>
           <tr>
-            <td>children</td>
+            <td>children?</td>
             <td>Button标签中的子节点</td>
             <td>React.ReactNode</td>
             <td>-</td>
           </tr>
           <tr>
-            <td>href</td>
+            <td>href?</td>
             <td>跳转链接，只能用于btnType='link'</td>
             <td>string</td>
             <td>-</td>

@@ -1,33 +1,30 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import { Icon } from 'juiu-design';
-// import { ButtonType, ButtonSize } from 'juiu-design/dist/components/Button/button';
 import './index.scss';
+import { copyText } from '../../utils/pagesUtils';
 
 const IconView: FC = (props) => {
   const code =
-  `  import { Button } from 'juiu-design';
-  import { ButtonType, ButtonSize } from 'juiu-design/dist/components/Button/button';
+    `   // 使用该组件时请在public->index.html 引入<link rel="stylesheet" href="//at.alicdn.com/t/font_2278999_g5mh4urakqr.css">
+  import { Icon } from 'juiu-design';
 
-  <Button btnType={ButtonType.Primary} size={ButtonSize.Large} onClick={e => { e.preventDefault();alert('Alert')}}
-  >Large Primary</Button>
-  <Button btnType={ButtonType.Success}>Default Success</Button>
-  <Button btnType={ButtonType.Warning}>Default Warning</Button>
-  <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>Small Danger</Button>
-  <Button onClick={e => { e.preventDefault(); alert('Alert')}}>Default</Button>
-  <Button disabled>Disabled</Button>
-  <Button btnType={ButtonType.Link} href="http://www.baidu.com" target="_blank">Link</Button>
-  <Button btnType={ButtonType.Link} disabled >Disabled Link</Button>`
+  <Icon type="icon iconright-btn-fill"></Icon>`
+
+  const copyIcon = (e: MouseEvent) => {
+    const text = (e.target as any).innerHTML
+    // console.log((e.target as any).innerHTML)
+    copyText(text)
+  } 
   return (
     <div className="icon-view">
       
-    <ul className="icon_lists dib-box">
-          
+      <ul className="icon_lists dib-box">
           <li className="dib">
             <Icon type="icon iconright-btn-fill"></Icon>
             <div className="name">
               right-btn-fill
             </div>
-            <div className="code-name">.iconright-btn-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconright-btn-fill
             </div>
           </li>
           
@@ -36,7 +33,7 @@ const IconView: FC = (props) => {
             <div className="name">
               228QQ
             </div>
-            <div className="code-name">.icon228QQ
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon228QQ
             </div>
           </li>
           
@@ -45,7 +42,7 @@ const IconView: FC = (props) => {
             <div className="name">
               bottom-btn-fill
             </div>
-            <div className="code-name">.iconbottom-btn-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconbottom-btn-fill
             </div>
           </li>
           
@@ -54,7 +51,7 @@ const IconView: FC = (props) => {
             <div className="name">
               287user06
             </div>
-            <div className="code-name">.icon287user06
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon287user06
             </div>
           </li>
           
@@ -63,7 +60,7 @@ const IconView: FC = (props) => {
             <div className="name">
               001addWD
             </div>
-            <div className="code-name">.icon001addWD
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon001addWD
             </div>
           </li>
           
@@ -72,7 +69,7 @@ const IconView: FC = (props) => {
             <div className="name">
               226code
             </div>
-            <div className="code-name">.icon226code
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon226code
             </div>
           </li>
           
@@ -81,7 +78,7 @@ const IconView: FC = (props) => {
             <div className="name">
               008minus04
             </div>
-            <div className="code-name">.icon008minus04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon008minus04
             </div>
           </li>
           
@@ -90,7 +87,7 @@ const IconView: FC = (props) => {
             <div className="name">
               293menudisplay
             </div>
-            <div className="code-name">.icon293menudisplay
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon293menudisplay
             </div>
           </li>
           
@@ -99,7 +96,7 @@ const IconView: FC = (props) => {
             <div className="name">
               017check03
             </div>
-            <div className="code-name">.icon017check03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon017check03
             </div>
           </li>
           
@@ -108,7 +105,7 @@ const IconView: FC = (props) => {
             <div className="name">
               266pen01
             </div>
-            <div className="code-name">.icon266pen01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon266pen01
             </div>
           </li>
           
@@ -117,7 +114,7 @@ const IconView: FC = (props) => {
             <div className="name">
               013cross02
             </div>
-            <div className="code-name">.icon013cross02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon013cross02
             </div>
           </li>
           
@@ -126,7 +123,7 @@ const IconView: FC = (props) => {
             <div className="name">
               240zhome03
             </div>
-            <div className="code-name">.icon240zhome03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon240zhome03
             </div>
           </li>
           
@@ -135,7 +132,7 @@ const IconView: FC = (props) => {
             <div className="name">
               012cross05
             </div>
-            <div className="code-name">.icon012cross05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon012cross05
             </div>
           </li>
           
@@ -144,7 +141,7 @@ const IconView: FC = (props) => {
             <div className="name">
               244arrowXZ06
             </div>
-            <div className="code-name">.icon244arrowXZ06
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon244arrowXZ06
             </div>
           </li>
           
@@ -153,7 +150,7 @@ const IconView: FC = (props) => {
             <div className="name">
               010plus05
             </div>
-            <div className="code-name">.icon010plus05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon010plus05
             </div>
           </li>
           
@@ -162,7 +159,7 @@ const IconView: FC = (props) => {
             <div className="name">
               260notice01
             </div>
-            <div className="code-name">.icon260notice01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon260notice01
             </div>
           </li>
           
@@ -171,7 +168,7 @@ const IconView: FC = (props) => {
             <div className="name">
               021checkboxWXZ
             </div>
-            <div className="code-name">.icon021checkboxWXZ
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon021checkboxWXZ
             </div>
           </li>
           
@@ -180,7 +177,7 @@ const IconView: FC = (props) => {
             <div className="name">
               291flashlight
             </div>
-            <div className="code-name">.icon291flashlight
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon291flashlight
             </div>
           </li>
           
@@ -189,7 +186,7 @@ const IconView: FC = (props) => {
             <div className="name">
               018cross04
             </div>
-            <div className="code-name">.icon018cross04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon018cross04
             </div>
           </li>
           
@@ -198,7 +195,7 @@ const IconView: FC = (props) => {
             <div className="name">
               282zhome04
             </div>
-            <div className="code-name">.icon282zhome04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon282zhome04
             </div>
           </li>
           
@@ -207,7 +204,7 @@ const IconView: FC = (props) => {
             <div className="name">
               019cross06
             </div>
-            <div className="code-name">.icon019cross06
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon019cross06
             </div>
           </li>
           
@@ -216,7 +213,7 @@ const IconView: FC = (props) => {
             <div className="name">
               258choose01
             </div>
-            <div className="code-name">.icon258choose01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon258choose01
             </div>
           </li>
           
@@ -225,7 +222,7 @@ const IconView: FC = (props) => {
             <div className="name">
               002deleteWD
             </div>
-            <div className="code-name">.icon002deleteWD
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon002deleteWD
             </div>
           </li>
           
@@ -234,7 +231,7 @@ const IconView: FC = (props) => {
             <div className="name">
               297textleft
             </div>
-            <div className="code-name">.icon297textleft
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon297textleft
             </div>
           </li>
           
@@ -243,7 +240,7 @@ const IconView: FC = (props) => {
             <div className="name">
               005plus03
             </div>
-            <div className="code-name">.icon005plus03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon005plus03
             </div>
           </li>
           
@@ -252,7 +249,7 @@ const IconView: FC = (props) => {
             <div className="name">
               295rotate
             </div>
-            <div className="code-name">.icon295rotate
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon295rotate
             </div>
           </li>
           
@@ -261,7 +258,7 @@ const IconView: FC = (props) => {
             <div className="name">
               009minus01
             </div>
-            <div className="code-name">.icon009minus01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon009minus01
             </div>
           </li>
           
@@ -270,7 +267,7 @@ const IconView: FC = (props) => {
             <div className="name">
               299textright
             </div>
-            <div className="code-name">.icon299textright
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon299textright
             </div>
           </li>
           
@@ -279,7 +276,7 @@ const IconView: FC = (props) => {
             <div className="name">
               011minus05
             </div>
-            <div className="code-name">.icon011minus05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon011minus05
             </div>
           </li>
           
@@ -288,7 +285,7 @@ const IconView: FC = (props) => {
             <div className="name">
               301deletingline
             </div>
-            <div className="code-name">.icon301deletingline
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon301deletingline
             </div>
           </li>
           
@@ -297,7 +294,7 @@ const IconView: FC = (props) => {
             <div className="name">
               029cancel
             </div>
-            <div className="code-name">.icon029cancel
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon029cancel
             </div>
           </li>
           
@@ -306,7 +303,7 @@ const IconView: FC = (props) => {
             <div className="name">
               248arrowXZ07
             </div>
-            <div className="code-name">.icon248arrowXZ07
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon248arrowXZ07
             </div>
           </li>
           
@@ -315,7 +312,7 @@ const IconView: FC = (props) => {
             <div className="name">
               007plus04
             </div>
-            <div className="code-name">.icon007plus04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon007plus04
             </div>
           </li>
           
@@ -324,7 +321,7 @@ const IconView: FC = (props) => {
             <div className="name">
               252bell01
             </div>
-            <div className="code-name">.icon252bell01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon252bell01
             </div>
           </li>
           
@@ -333,7 +330,7 @@ const IconView: FC = (props) => {
             <div className="name">
               020checkboxXZ
             </div>
-            <div className="code-name">.icon020checkboxXZ
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon020checkboxXZ
             </div>
           </li>
           
@@ -342,7 +339,7 @@ const IconView: FC = (props) => {
             <div className="name">
               305circular
             </div>
-            <div className="code-name">.icon305circular
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon305circular
             </div>
           </li>
           
@@ -351,7 +348,7 @@ const IconView: FC = (props) => {
             <div className="name">
               023radioWXZ
             </div>
-            <div className="code-name">.icon023radioWXZ
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon023radioWXZ
             </div>
           </li>
           
@@ -360,7 +357,7 @@ const IconView: FC = (props) => {
             <div className="name">
               264follow03
             </div>
-            <div className="code-name">.icon264follow03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon264follow03
             </div>
           </li>
           
@@ -369,7 +366,7 @@ const IconView: FC = (props) => {
             <div className="name">
               031send
             </div>
-            <div className="code-name">.icon031send
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon031send
             </div>
           </li>
           
@@ -378,7 +375,7 @@ const IconView: FC = (props) => {
             <div className="name">
               307rectangle
             </div>
-            <div className="code-name">.icon307rectangle
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon307rectangle
             </div>
           </li>
           
@@ -387,7 +384,7 @@ const IconView: FC = (props) => {
             <div className="name">
               006minus03
             </div>
-            <div className="code-name">.icon006minus03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon006minus03
             </div>
           </li>
           
@@ -396,7 +393,7 @@ const IconView: FC = (props) => {
             <div className="name">
               084arrowXX04
             </div>
-            <div className="code-name">.icon084arrowXX04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon084arrowXX04
             </div>
           </li>
           
@@ -405,7 +402,7 @@ const IconView: FC = (props) => {
             <div className="name">
               025ban
             </div>
-            <div className="code-name">.icon025ban
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon025ban
             </div>
           </li>
           
@@ -414,7 +411,7 @@ const IconView: FC = (props) => {
             <div className="name">
               234logoZH02
             </div>
-            <div className="code-name">.icon234logoZH02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon234logoZH02
             </div>
           </li>
           
@@ -423,7 +420,7 @@ const IconView: FC = (props) => {
             <div className="name">
               030back
             </div>
-            <div className="code-name">.icon030back
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon030back
             </div>
           </li>
           
@@ -432,7 +429,7 @@ const IconView: FC = (props) => {
             <div className="name">
               309triangle
             </div>
-            <div className="code-name">.icon309triangle
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon309triangle
             </div>
           </li>
           
@@ -441,7 +438,7 @@ const IconView: FC = (props) => {
             <div className="name">
               003plus01
             </div>
-            <div className="code-name">.icon003plus01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon003plus01
             </div>
           </li>
           
@@ -450,7 +447,7 @@ const IconView: FC = (props) => {
             <div className="name">
               294scissors
             </div>
-            <div className="code-name">.icon294scissors
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon294scissors
             </div>
           </li>
           
@@ -459,7 +456,7 @@ const IconView: FC = (props) => {
             <div className="name">
               014cross03
             </div>
-            <div className="code-name">.icon014cross03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon014cross03
             </div>
           </li>
           
@@ -468,7 +465,7 @@ const IconView: FC = (props) => {
             <div className="name">
               286user05
             </div>
-            <div className="code-name">.icon286user05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon286user05
             </div>
           </li>
           
@@ -477,7 +474,7 @@ const IconView: FC = (props) => {
             <div className="name">
               027stop
             </div>
-            <div className="code-name">.icon027stop
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon027stop
             </div>
           </li>
           
@@ -486,7 +483,7 @@ const IconView: FC = (props) => {
             <div className="name">
               268calendar02
             </div>
-            <div className="code-name">.icon268calendar02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon268calendar02
             </div>
           </li>
           
@@ -495,7 +492,7 @@ const IconView: FC = (props) => {
             <div className="name">
               022radioXZ
             </div>
-            <div className="code-name">.icon022radioXZ
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon022radioXZ
             </div>
           </li>
           
@@ -504,7 +501,7 @@ const IconView: FC = (props) => {
             <div className="name">
               311diamond
             </div>
-            <div className="code-name">.icon311diamond
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon311diamond
             </div>
           </li>
           
@@ -513,7 +510,7 @@ const IconView: FC = (props) => {
             <div className="name">
               015cross01
             </div>
-            <div className="code-name">.icon015cross01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon015cross01
             </div>
           </li>
           
@@ -522,7 +519,7 @@ const IconView: FC = (props) => {
             <div className="name">
               303italic
             </div>
-            <div className="code-name">.icon303italic
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon303italic
             </div>
           </li>
           
@@ -531,7 +528,7 @@ const IconView: FC = (props) => {
             <div className="name">
               033edit
             </div>
-            <div className="code-name">.icon033edit
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon033edit
             </div>
           </li>
           
@@ -540,7 +537,7 @@ const IconView: FC = (props) => {
             <div className="name">
               313align bottom
             </div>
-            <div className="code-name">.icon313alignbottom
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon313alignbottom
             </div>
           </li>
           
@@ -549,7 +546,7 @@ const IconView: FC = (props) => {
             <div className="name">
               037trash
             </div>
-            <div className="code-name">.icon037trash
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon037trash
             </div>
           </li>
           
@@ -558,7 +555,7 @@ const IconView: FC = (props) => {
             <div className="name">
               238chartRLT
             </div>
-            <div className="code-name">.icon238chartRLT
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon238chartRLT
             </div>
           </li>
           
@@ -567,7 +564,7 @@ const IconView: FC = (props) => {
             <div className="name">
               026pause
             </div>
-            <div className="code-name">.icon026pause
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon026pause
             </div>
           </li>
           
@@ -576,7 +573,7 @@ const IconView: FC = (props) => {
             <div className="name">
               272location06
             </div>
-            <div className="code-name">.icon272location06
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon272location06
             </div>
           </li>
           
@@ -585,7 +582,7 @@ const IconView: FC = (props) => {
             <div className="name">
               032newWD
             </div>
-            <div className="code-name">.icon032newWD
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon032newWD
             </div>
           </li>
           
@@ -594,7 +591,7 @@ const IconView: FC = (props) => {
             <div className="name">
               315align vertical center
             </div>
-            <div className="code-name">.icon315alignverticalcenter
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon315alignverticalcenter
             </div>
           </li>
           
@@ -603,7 +600,7 @@ const IconView: FC = (props) => {
             <div className="name">
               035storage
             </div>
-            <div className="code-name">.icon035storage
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon035storage
             </div>
           </li>
           
@@ -612,7 +609,7 @@ const IconView: FC = (props) => {
             <div className="name">
               317align right
             </div>
-            <div className="code-name">.icon317alignright
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon317alignright
             </div>
           </li>
           
@@ -621,7 +618,7 @@ const IconView: FC = (props) => {
             <div className="name">
               047min
             </div>
-            <div className="code-name">.icon047min
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon047min
             </div>
           </li>
           
@@ -630,7 +627,7 @@ const IconView: FC = (props) => {
             <div className="name">
               290calendar04
             </div>
-            <div className="code-name">.icon290calendar04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon290calendar04
             </div>
           </li>
           
@@ -639,7 +636,7 @@ const IconView: FC = (props) => {
             <div className="name">
               034pen
             </div>
-            <div className="code-name">.icon034pen
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon034pen
             </div>
           </li>
           
@@ -648,7 +645,7 @@ const IconView: FC = (props) => {
             <div className="name">
               310emptytriangle
             </div>
-            <div className="code-name">.icon310emptytriangle
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon310emptytriangle
             </div>
           </li>
           
@@ -657,7 +654,7 @@ const IconView: FC = (props) => {
             <div className="name">
               039folder
             </div>
-            <div className="code-name">.icon039folder
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon039folder
             </div>
           </li>
           
@@ -666,7 +663,7 @@ const IconView: FC = (props) => {
             <div className="name">
               196calendar
             </div>
-            <div className="code-name">.icon196calendar
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon196calendar
             </div>
           </li>
           
@@ -675,7 +672,7 @@ const IconView: FC = (props) => {
             <div className="name">
               024check01
             </div>
-            <div className="code-name">.icon024check01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon024check01
             </div>
           </li>
           
@@ -684,7 +681,7 @@ const IconView: FC = (props) => {
             <div className="name">
               318align Top
             </div>
-            <div className="code-name">.icon318alignTop
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon318alignTop
             </div>
           </li>
           
@@ -693,7 +690,7 @@ const IconView: FC = (props) => {
             <div className="name">
               041preview
             </div>
-            <div className="code-name">.icon041preview
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon041preview
             </div>
           </li>
           
@@ -702,7 +699,7 @@ const IconView: FC = (props) => {
             <div className="name">
               096prev
             </div>
-            <div className="code-name">.icon096prev
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon096prev
             </div>
           </li>
           
@@ -711,7 +708,7 @@ const IconView: FC = (props) => {
             <div className="name">
               042previewPL
             </div>
-            <div className="code-name">.icon042previewPL
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon042previewPL
             </div>
           </li>
           
@@ -720,7 +717,7 @@ const IconView: FC = (props) => {
             <div className="name">
               088forward
             </div>
-            <div className="code-name">.icon088forward
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon088forward
             </div>
           </li>
           
@@ -729,7 +726,7 @@ const IconView: FC = (props) => {
             <div className="name">
               043search
             </div>
-            <div className="code-name">.icon043search
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon043search
             </div>
           </li>
           
@@ -738,7 +735,7 @@ const IconView: FC = (props) => {
             <div className="name">
               321Reordering
             </div>
-            <div className="code-name">.icon321Reordering
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon321Reordering
             </div>
           </li>
           
@@ -747,7 +744,7 @@ const IconView: FC = (props) => {
             <div className="name">
               038empty
             </div>
-            <div className="code-name">.icon038empty
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon038empty
             </div>
           </li>
           
@@ -756,7 +753,7 @@ const IconView: FC = (props) => {
             <div className="name">
               288document
             </div>
-            <div className="code-name">.icon288document
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon288document
             </div>
           </li>
           
@@ -765,7 +762,7 @@ const IconView: FC = (props) => {
             <div className="name">
               046max
             </div>
-            <div className="code-name">.icon046max
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon046max
             </div>
           </li>
           
@@ -774,7 +771,7 @@ const IconView: FC = (props) => {
             <div className="name">
               325suspend
             </div>
-            <div className="code-name">.icon325suspend
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon325suspend
             </div>
           </li>
           
@@ -783,7 +780,7 @@ const IconView: FC = (props) => {
             <div className="name">
               051pop
             </div>
-            <div className="code-name">.icon051pop
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon051pop
             </div>
           </li>
           
@@ -792,7 +789,7 @@ const IconView: FC = (props) => {
             <div className="name">
               319Vertical central distribution
             </div>
-            <div className="code-name">.icon319Verticalcentraldistribution
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon319Verticalcentraldistribution
             </div>
           </li>
           
@@ -801,7 +798,7 @@ const IconView: FC = (props) => {
             <div className="name">
               053contract
             </div>
-            <div className="code-name">.icon053contract
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon053contract
             </div>
           </li>
           
@@ -810,7 +807,7 @@ const IconView: FC = (props) => {
             <div className="name">
               302underline
             </div>
-            <div className="code-name">.icon302underline
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon302underline
             </div>
           </li>
           
@@ -819,7 +816,7 @@ const IconView: FC = (props) => {
             <div className="name">
               057reload
             </div>
-            <div className="code-name">.icon057reload
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon057reload
             </div>
           </li>
           
@@ -828,7 +825,7 @@ const IconView: FC = (props) => {
             <div className="name">
               298textcenter
             </div>
-            <div className="code-name">.icon298textcenter
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon298textcenter
             </div>
           </li>
           
@@ -837,7 +834,7 @@ const IconView: FC = (props) => {
             <div className="name">
               061choose
             </div>
-            <div className="code-name">.icon061choose
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon061choose
             </div>
           </li>
           
@@ -846,7 +843,7 @@ const IconView: FC = (props) => {
             <div className="name">
               323Menu list
             </div>
-            <div className="code-name">.icon323Menulist
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon323Menulist
             </div>
           </li>
           
@@ -855,7 +852,7 @@ const IconView: FC = (props) => {
             <div className="name">
               056refresh
             </div>
-            <div className="code-name">.icon056refresh
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon056refresh
             </div>
           </li>
           
@@ -864,7 +861,7 @@ const IconView: FC = (props) => {
             <div className="name">
               322annotation
             </div>
-            <div className="code-name">.icon322annotation
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon322annotation
             </div>
           </li>
           
@@ -873,7 +870,7 @@ const IconView: FC = (props) => {
             <div className="name">
               055question
             </div>
-            <div className="code-name">.icon055question
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon055question
             </div>
           </li>
           
@@ -882,7 +879,7 @@ const IconView: FC = (props) => {
             <div className="name">
               276no_content
             </div>
-            <div className="code-name">.icon276no_content
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon276no_content
             </div>
           </li>
           
@@ -891,7 +888,7 @@ const IconView: FC = (props) => {
             <div className="name">
               004plus02
             </div>
-            <div className="code-name">.icon004plus02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon004plus02
             </div>
           </li>
           
@@ -900,7 +897,7 @@ const IconView: FC = (props) => {
             <div className="name">
               280chinamap
             </div>
-            <div className="code-name">.icon280chinamap
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon280chinamap
             </div>
           </li>
           
@@ -909,7 +906,7 @@ const IconView: FC = (props) => {
             <div className="name">
               049import
             </div>
-            <div className="code-name">.icon049import
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon049import
             </div>
           </li>
           
@@ -918,7 +915,7 @@ const IconView: FC = (props) => {
             <div className="name">
               200book02
             </div>
-            <div className="code-name">.icon200book02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon200book02
             </div>
           </li>
           
@@ -927,7 +924,7 @@ const IconView: FC = (props) => {
             <div className="name">
               045narrow
             </div>
-            <div className="code-name">.icon045narrow
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon045narrow
             </div>
           </li>
           
@@ -936,7 +933,7 @@ const IconView: FC = (props) => {
             <div className="name">
               328storage2
             </div>
-            <div className="code-name">.icon328storage2
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon328storage2
             </div>
           </li>
           
@@ -945,7 +942,7 @@ const IconView: FC = (props) => {
             <div className="name">
               058update
             </div>
-            <div className="code-name">.icon058update
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon058update
             </div>
           </li>
           
@@ -954,7 +951,7 @@ const IconView: FC = (props) => {
             <div className="name">
               327paixu
             </div>
-            <div className="code-name">.icon327paixu
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon327paixu
             </div>
           </li>
           
@@ -963,7 +960,7 @@ const IconView: FC = (props) => {
             <div className="name">
               050export
             </div>
-            <div className="code-name">.icon050export
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon050export
             </div>
           </li>
           
@@ -972,7 +969,7 @@ const IconView: FC = (props) => {
             <div className="name">
               308emptyrectangle
             </div>
-            <div className="code-name">.icon308emptyrectangle
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon308emptyrectangle
             </div>
           </li>
           
@@ -981,7 +978,7 @@ const IconView: FC = (props) => {
             <div className="name">
               067download01
             </div>
-            <div className="code-name">.icon067download01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon067download01
             </div>
           </li>
           
@@ -990,7 +987,7 @@ const IconView: FC = (props) => {
             <div className="name">
               326Release
             </div>
-            <div className="code-name">.icon326Release
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon326Release
             </div>
           </li>
           
@@ -999,7 +996,7 @@ const IconView: FC = (props) => {
             <div className="name">
               059load
             </div>
-            <div className="code-name">.icon059load
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon059load
             </div>
           </li>
           
@@ -1008,7 +1005,7 @@ const IconView: FC = (props) => {
             <div className="name">
               329
             </div>
-            <div className="code-name">.icon329
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon329
             </div>
           </li>
           
@@ -1017,7 +1014,7 @@ const IconView: FC = (props) => {
             <div className="name">
               016check02
             </div>
-            <div className="code-name">.icon016check02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon016check02
             </div>
           </li>
           
@@ -1026,7 +1023,7 @@ const IconView: FC = (props) => {
             <div className="name">
               278setting02
             </div>
-            <div className="code-name">.icon278setting02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon278setting02
             </div>
           </li>
           
@@ -1035,7 +1032,7 @@ const IconView: FC = (props) => {
             <div className="name">
               054notification
             </div>
-            <div className="code-name">.icon054notification
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon054notification
             </div>
           </li>
           
@@ -1044,7 +1041,7 @@ const IconView: FC = (props) => {
             <div className="name">
               204phone
             </div>
-            <div className="code-name">.icon204phone
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon204phone
             </div>
           </li>
           
@@ -1053,7 +1050,7 @@ const IconView: FC = (props) => {
             <div className="name">
               085arrowXZ04
             </div>
-            <div className="code-name">.icon085arrowXZ04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon085arrowXZ04
             </div>
           </li>
           
@@ -1062,7 +1059,7 @@ const IconView: FC = (props) => {
             <div className="name">
               331search
             </div>
-            <div className="code-name">.icon331search
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon331search
             </div>
           </li>
           
@@ -1071,7 +1068,7 @@ const IconView: FC = (props) => {
             <div className="name">
               070arrowXX01
             </div>
-            <div className="code-name">.icon070arrowXX01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon070arrowXX01
             </div>
           </li>
           
@@ -1080,7 +1077,7 @@ const IconView: FC = (props) => {
             <div className="name">
               208money01
             </div>
-            <div className="code-name">.icon208money01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon208money01
             </div>
           </li>
           
@@ -1089,7 +1086,7 @@ const IconView: FC = (props) => {
             <div className="name">
               028arrow
             </div>
-            <div className="code-name">.icon028arrow
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon028arrow
             </div>
           </li>
           
@@ -1098,7 +1095,7 @@ const IconView: FC = (props) => {
             <div className="name">
               332money02
             </div>
-            <div className="code-name">.icon332money02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon332money02
             </div>
           </li>
           
@@ -1107,7 +1104,7 @@ const IconView: FC = (props) => {
             <div className="name">
               062display
             </div>
-            <div className="code-name">.icon062display
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon062display
             </div>
           </li>
           
@@ -1116,7 +1113,7 @@ const IconView: FC = (props) => {
             <div className="name">
               284menu06
             </div>
-            <div className="code-name">.icon284menu06
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon284menu06
             </div>
           </li>
           
@@ -1125,7 +1122,7 @@ const IconView: FC = (props) => {
             <div className="name">
               069arrowXS01
             </div>
-            <div className="code-name">.icon069arrowXS01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon069arrowXS01
             </div>
           </li>
           
@@ -1134,7 +1131,7 @@ const IconView: FC = (props) => {
             <div className="name">
               333money03
             </div>
-            <div className="code-name">.icon333money03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon333money03
             </div>
           </li>
           
@@ -1143,7 +1140,7 @@ const IconView: FC = (props) => {
             <div className="name">
               075arrowXZ02
             </div>
-            <div className="code-name">.icon075arrowXZ02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon075arrowXZ02
             </div>
           </li>
           
@@ -1152,7 +1149,7 @@ const IconView: FC = (props) => {
             <div className="name">
               331
             </div>
-            <div className="code-name">.icon331
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon331
             </div>
           </li>
           
@@ -1161,7 +1158,7 @@ const IconView: FC = (props) => {
             <div className="name">
               063hide
             </div>
-            <div className="code-name">.icon063hide
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon063hide
             </div>
           </li>
           
@@ -1170,7 +1167,7 @@ const IconView: FC = (props) => {
             <div className="name">
               335max02
             </div>
-            <div className="code-name">.icon335max02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon335max02
             </div>
           </li>
           
@@ -1179,7 +1176,7 @@ const IconView: FC = (props) => {
             <div className="name">
               065download02
             </div>
-            <div className="code-name">.icon065download02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon065download02
             </div>
           </li>
           
@@ -1188,7 +1185,7 @@ const IconView: FC = (props) => {
             <div className="name">
               336
             </div>
-            <div className="code-name">.icon336
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon336
             </div>
           </li>
           
@@ -1197,7 +1194,7 @@ const IconView: FC = (props) => {
             <div className="name">
               040open
             </div>
-            <div className="code-name">.icon040open
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon040open
             </div>
           </li>
           
@@ -1206,7 +1203,7 @@ const IconView: FC = (props) => {
             <div className="name">
               312emptydiamond
             </div>
-            <div className="code-name">.icon312emptydiamond
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon312emptydiamond
             </div>
           </li>
           
@@ -1215,7 +1212,7 @@ const IconView: FC = (props) => {
             <div className="name">
               066synchronize
             </div>
-            <div className="code-name">.icon066synchronize
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon066synchronize
             </div>
           </li>
           
@@ -1224,7 +1221,7 @@ const IconView: FC = (props) => {
             <div className="name">
               324play
             </div>
-            <div className="code-name">.icon324play
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon324play
             </div>
           </li>
           
@@ -1233,7 +1230,7 @@ const IconView: FC = (props) => {
             <div className="name">
               074arrowXX02
             </div>
-            <div className="code-name">.icon074arrowXX02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon074arrowXX02
             </div>
           </li>
           
@@ -1242,7 +1239,7 @@ const IconView: FC = (props) => {
             <div className="name">
               337
             </div>
-            <div className="code-name">.icon337
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon337
             </div>
           </li>
           
@@ -1251,7 +1248,7 @@ const IconView: FC = (props) => {
             <div className="name">
               087rewind
             </div>
-            <div className="code-name">.icon087rewind
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon087rewind
             </div>
           </li>
           
@@ -1260,7 +1257,7 @@ const IconView: FC = (props) => {
             <div className="name">
               212trophy01
             </div>
-            <div className="code-name">.icon212trophy01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon212trophy01
             </div>
           </li>
           
@@ -1269,7 +1266,7 @@ const IconView: FC = (props) => {
             <div className="name">
               036storageXZ
             </div>
-            <div className="code-name">.icon036storageXZ
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon036storageXZ
             </div>
           </li>
           
@@ -1278,7 +1275,7 @@ const IconView: FC = (props) => {
             <div className="name">
               339
             </div>
-            <div className="code-name">.icon339
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon339
             </div>
           </li>
           
@@ -1287,7 +1284,7 @@ const IconView: FC = (props) => {
             <div className="name">
               052expand
             </div>
-            <div className="code-name">.icon052expand
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon052expand
             </div>
           </li>
           
@@ -1296,7 +1293,7 @@ const IconView: FC = (props) => {
             <div className="name">
               343
             </div>
-            <div className="code-name">.icon343
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon343
             </div>
           </li>
           
@@ -1305,7 +1302,7 @@ const IconView: FC = (props) => {
             <div className="name">
               060setting
             </div>
-            <div className="code-name">.icon060setting
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon060setting
             </div>
           </li>
           
@@ -1314,7 +1311,7 @@ const IconView: FC = (props) => {
             <div className="name">
               292-bluetooth
             </div>
-            <div className="code-name">.icon292-bluetooth
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon292-bluetooth
             </div>
           </li>
           
@@ -1323,7 +1320,7 @@ const IconView: FC = (props) => {
             <div className="name">
               093under01
             </div>
-            <div className="code-name">.icon093under01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon093under01
             </div>
           </li>
           
@@ -1332,7 +1329,7 @@ const IconView: FC = (props) => {
             <div className="name">
               347
             </div>
-            <div className="code-name">.icon347
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon347
             </div>
           </li>
           
@@ -1341,7 +1338,7 @@ const IconView: FC = (props) => {
             <div className="name">
               081arrowXZ05
             </div>
-            <div className="code-name">.icon081arrowXZ05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon081arrowXZ05
             </div>
           </li>
           
@@ -1350,7 +1347,7 @@ const IconView: FC = (props) => {
             <div className="name">
               345
             </div>
-            <div className="code-name">.icon345
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon345
             </div>
           </li>
           
@@ -1359,7 +1356,7 @@ const IconView: FC = (props) => {
             <div className="name">
               073arrowXS02
             </div>
-            <div className="code-name">.icon073arrowXS02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon073arrowXS02
             </div>
           </li>
           
@@ -1368,7 +1365,7 @@ const IconView: FC = (props) => {
             <div className="name">
               341
             </div>
-            <div className="code-name">.icon341
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon341
             </div>
           </li>
           
@@ -1377,7 +1374,7 @@ const IconView: FC = (props) => {
             <div className="name">
               077arrowXS03
             </div>
-            <div className="code-name">.icon077arrowXS03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon077arrowXS03
             </div>
           </li>
           
@@ -1386,7 +1383,7 @@ const IconView: FC = (props) => {
             <div className="name">
               328
             </div>
-            <div className="code-name">.icon328
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon328
             </div>
           </li>
           
@@ -1395,7 +1392,7 @@ const IconView: FC = (props) => {
             <div className="name">
               079arrowXZ03
             </div>
-            <div className="code-name">.icon079arrowXZ03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon079arrowXZ03
             </div>
           </li>
           
@@ -1404,7 +1401,7 @@ const IconView: FC = (props) => {
             <div className="name">
               296cut
             </div>
-            <div className="code-name">.icon296cut
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon296cut
             </div>
           </li>
           
@@ -1413,7 +1410,7 @@ const IconView: FC = (props) => {
             <div className="name">
               071arrowXZ01
             </div>
-            <div className="code-name">.icon071arrowXZ01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon071arrowXZ01
             </div>
           </li>
           
@@ -1422,7 +1419,7 @@ const IconView: FC = (props) => {
             <div className="name">
               330wuxinhao2
             </div>
-            <div className="code-name">.icon330wuxinhao2
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon330wuxinhao2
             </div>
           </li>
           
@@ -1431,7 +1428,7 @@ const IconView: FC = (props) => {
             <div className="name">
               090top02
             </div>
-            <div className="code-name">.icon090top02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon090top02
             </div>
           </li>
           
@@ -1440,7 +1437,7 @@ const IconView: FC = (props) => {
             <div className="name">
               351
             </div>
-            <div className="code-name">.icon351
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon351
             </div>
           </li>
           
@@ -1449,7 +1446,7 @@ const IconView: FC = (props) => {
             <div className="name">
               098zhome01
             </div>
-            <div className="code-name">.icon098zhome01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon098zhome01
             </div>
           </li>
           
@@ -1458,7 +1455,7 @@ const IconView: FC = (props) => {
             <div className="name">
               220equipment
             </div>
-            <div className="code-name">.icon220equipment
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon220equipment
             </div>
           </li>
           
@@ -1467,7 +1464,7 @@ const IconView: FC = (props) => {
             <div className="name">
               091under02
             </div>
-            <div className="code-name">.icon091under02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon091under02
             </div>
           </li>
           
@@ -1476,7 +1473,7 @@ const IconView: FC = (props) => {
             <div className="name">
               256cross07
             </div>
-            <div className="code-name">.icon256cross07
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon256cross07
             </div>
           </li>
           
@@ -1485,7 +1482,7 @@ const IconView: FC = (props) => {
             <div className="name">
               078arrowXX03
             </div>
-            <div className="code-name">.icon078arrowXX03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon078arrowXX03
             </div>
           </li>
           
@@ -1494,7 +1491,7 @@ const IconView: FC = (props) => {
             <div className="name">
               344
             </div>
-            <div className="code-name">.icon344
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon344
             </div>
           </li>
           
@@ -1503,7 +1500,7 @@ const IconView: FC = (props) => {
             <div className="name">
               101user02
             </div>
-            <div className="code-name">.icon101user02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon101user02
             </div>
           </li>
           
@@ -1512,7 +1509,7 @@ const IconView: FC = (props) => {
             <div className="name">
               334money04
             </div>
-            <div className="code-name">.icon334money04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon334money04
             </div>
           </li>
           
@@ -1521,7 +1518,7 @@ const IconView: FC = (props) => {
             <div className="name">
               092top01
             </div>
-            <div className="code-name">.icon092top01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon092top01
             </div>
           </li>
           
@@ -1530,7 +1527,7 @@ const IconView: FC = (props) => {
             <div className="name">
               337Mean
             </div>
-            <div className="code-name">.icon337Mean
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon337Mean
             </div>
           </li>
           
@@ -1539,7 +1536,7 @@ const IconView: FC = (props) => {
             <div className="name">
               086arrowXY04
             </div>
-            <div className="code-name">.icon086arrowXY04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon086arrowXY04
             </div>
           </li>
           
@@ -1548,7 +1545,7 @@ const IconView: FC = (props) => {
             <div className="name">
               340
             </div>
-            <div className="code-name">.icon340
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon340
             </div>
           </li>
           
@@ -1557,7 +1554,7 @@ const IconView: FC = (props) => {
             <div className="name">
               083arrowXS04
             </div>
-            <div className="code-name">.icon083arrowXS04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon083arrowXS04
             </div>
           </li>
           
@@ -1566,7 +1563,7 @@ const IconView: FC = (props) => {
             <div className="name">
               300bold
             </div>
-            <div className="code-name">.icon300bold
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon300bold
             </div>
           </li>
           
@@ -1575,7 +1572,7 @@ const IconView: FC = (props) => {
             <div className="name">
               105userSC
             </div>
-            <div className="code-name">.icon105userSC
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon105userSC
             </div>
           </li>
           
@@ -1584,7 +1581,7 @@ const IconView: FC = (props) => {
             <div className="name">
               332
             </div>
-            <div className="code-name">.icon332
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon332
             </div>
           </li>
           
@@ -1593,7 +1590,7 @@ const IconView: FC = (props) => {
             <div className="name">
               103bookTX
             </div>
-            <div className="code-name">.icon103bookTX
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon103bookTX
             </div>
           </li>
           
@@ -1602,7 +1599,7 @@ const IconView: FC = (props) => {
             <div className="name">
               316align Left
             </div>
-            <div className="code-name">.icon316alignLeft
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon316alignLeft
             </div>
           </li>
           
@@ -1611,7 +1608,7 @@ const IconView: FC = (props) => {
             <div className="name">
               089switch
             </div>
-            <div className="code-name">.icon089switch
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon089switch
             </div>
           </li>
           
@@ -1620,7 +1617,7 @@ const IconView: FC = (props) => {
             <div className="name">
               355
             </div>
-            <div className="code-name">.icon355
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon355
             </div>
           </li>
           
@@ -1629,7 +1626,7 @@ const IconView: FC = (props) => {
             <div className="name">
               064upload02
             </div>
-            <div className="code-name">.icon064upload02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon064upload02
             </div>
           </li>
           
@@ -1638,7 +1635,7 @@ const IconView: FC = (props) => {
             <div className="name">
               329 mailbox
             </div>
-            <div className="code-name">.icon329mailbox
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon329mailbox
             </div>
           </li>
           
@@ -1647,7 +1644,7 @@ const IconView: FC = (props) => {
             <div className="name">
               100user01
             </div>
-            <div className="code-name">.icon100user01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon100user01
             </div>
           </li>
           
@@ -1656,7 +1653,7 @@ const IconView: FC = (props) => {
             <div className="name">
               353
             </div>
-            <div className="code-name">.icon353
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon353
             </div>
           </li>
           
@@ -1665,7 +1662,7 @@ const IconView: FC = (props) => {
             <div className="name">
               094first
             </div>
-            <div className="code-name">.icon094first
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon094first
             </div>
           </li>
           
@@ -1674,7 +1671,7 @@ const IconView: FC = (props) => {
             <div className="name">
               359
             </div>
-            <div className="code-name">.icon359
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon359
             </div>
           </li>
           
@@ -1683,7 +1680,7 @@ const IconView: FC = (props) => {
             <div className="name">
               102users
             </div>
-            <div className="code-name">.icon102users
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon102users
             </div>
           </li>
           
@@ -1692,7 +1689,7 @@ const IconView: FC = (props) => {
             <div className="name">
               330
             </div>
-            <div className="code-name">.icon330
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon330
             </div>
           </li>
           
@@ -1701,7 +1698,7 @@ const IconView: FC = (props) => {
             <div className="name">
               117mail
             </div>
-            <div className="code-name">.icon117mail
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon117mail
             </div>
           </li>
           
@@ -1710,7 +1707,7 @@ const IconView: FC = (props) => {
             <div className="name">
               334
             </div>
-            <div className="code-name">.icon334
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon334
             </div>
           </li>
           
@@ -1719,7 +1716,7 @@ const IconView: FC = (props) => {
             <div className="name">
               044enlarge
             </div>
-            <div className="code-name">.icon044enlarge
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon044enlarge
             </div>
           </li>
           
@@ -1728,7 +1725,7 @@ const IconView: FC = (props) => {
             <div className="name">
               357
             </div>
-            <div className="code-name">.icon357
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon357
             </div>
           </li>
           
@@ -1737,7 +1734,7 @@ const IconView: FC = (props) => {
             <div className="name">
               072arrowXY01
             </div>
-            <div className="code-name">.icon072arrowXY01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon072arrowXY01
             </div>
           </li>
           
@@ -1746,7 +1743,7 @@ const IconView: FC = (props) => {
             <div className="name">
               336min02
             </div>
-            <div className="code-name">.icon336min02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon336min02
             </div>
           </li>
           
@@ -1755,7 +1752,7 @@ const IconView: FC = (props) => {
             <div className="name">
               099zhome02
             </div>
-            <div className="code-name">.icon099zhome02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon099zhome02
             </div>
           </li>
           
@@ -1764,7 +1761,7 @@ const IconView: FC = (props) => {
             <div className="name">
               349
             </div>
-            <div className="code-name">.icon349
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon349
             </div>
           </li>
           
@@ -1773,7 +1770,7 @@ const IconView: FC = (props) => {
             <div className="name">
               048window
             </div>
-            <div className="code-name">.icon048window
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon048window
             </div>
           </li>
           
@@ -1782,7 +1779,7 @@ const IconView: FC = (props) => {
             <div className="name">
               350
             </div>
-            <div className="code-name">.icon350
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon350
             </div>
           </li>
           
@@ -1791,7 +1788,7 @@ const IconView: FC = (props) => {
             <div className="name">
               095last
             </div>
-            <div className="code-name">.icon095last
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon095last
             </div>
           </li>
           
@@ -1800,7 +1797,7 @@ const IconView: FC = (props) => {
             <div className="name">
               352
             </div>
-            <div className="code-name">.icon352
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon352
             </div>
           </li>
           
@@ -1809,7 +1806,7 @@ const IconView: FC = (props) => {
             <div className="name">
               068upload01
             </div>
-            <div className="code-name">.icon068upload01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon068upload01
             </div>
           </li>
           
@@ -1818,7 +1815,7 @@ const IconView: FC = (props) => {
             <div className="name">
               356
             </div>
-            <div className="code-name">.icon356
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon356
             </div>
           </li>
           
@@ -1827,7 +1824,7 @@ const IconView: FC = (props) => {
             <div className="name">
               106collect
             </div>
-            <div className="code-name">.icon106collect
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon106collect
             </div>
           </li>
           
@@ -1836,7 +1833,7 @@ const IconView: FC = (props) => {
             <div className="name">
               360
             </div>
-            <div className="code-name">.icon360
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon360
             </div>
           </li>
           
@@ -1845,7 +1842,7 @@ const IconView: FC = (props) => {
             <div className="name">
               129voice03
             </div>
-            <div className="code-name">.icon129voice03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon129voice03
             </div>
           </li>
           
@@ -1854,7 +1851,7 @@ const IconView: FC = (props) => {
             <div className="name">
               342
             </div>
-            <div className="code-name">.icon342
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon342
             </div>
           </li>
           
@@ -1863,7 +1860,7 @@ const IconView: FC = (props) => {
             <div className="name">
               097next
             </div>
-            <div className="code-name">.icon097next
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon097next
             </div>
           </li>
           
@@ -1872,7 +1869,7 @@ const IconView: FC = (props) => {
             <div className="name">
               361
             </div>
-            <div className="code-name">.icon361
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon361
             </div>
           </li>
           
@@ -1881,7 +1878,7 @@ const IconView: FC = (props) => {
             <div className="name">
               113video02
             </div>
-            <div className="code-name">.icon113video02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon113video02
             </div>
           </li>
           
@@ -1890,7 +1887,7 @@ const IconView: FC = (props) => {
             <div className="name">
               354
             </div>
-            <div className="code-name">.icon354
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon354
             </div>
           </li>
           
@@ -1899,7 +1896,7 @@ const IconView: FC = (props) => {
             <div className="name">
               111image
             </div>
-            <div className="code-name">.icon111image
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon111image
             </div>
           </li>
           
@@ -1908,7 +1905,7 @@ const IconView: FC = (props) => {
             <div className="name">
               365
             </div>
-            <div className="code-name">.icon365
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon365
             </div>
           </li>
           
@@ -1917,7 +1914,7 @@ const IconView: FC = (props) => {
             <div className="name">
               118ellipsis
             </div>
-            <div className="code-name">.icon118ellipsis
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon118ellipsis
             </div>
           </li>
           
@@ -1926,7 +1923,7 @@ const IconView: FC = (props) => {
             <div className="name">
               358
             </div>
-            <div className="code-name">.icon358
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon358
             </div>
           </li>
           
@@ -1935,7 +1932,7 @@ const IconView: FC = (props) => {
             <div className="name">
               116key
             </div>
-            <div className="code-name">.icon116key
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon116key
             </div>
           </li>
           
@@ -1944,7 +1941,7 @@ const IconView: FC = (props) => {
             <div className="name">
               371
             </div>
-            <div className="code-name">.icon371
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon371
             </div>
           </li>
           
@@ -1953,7 +1950,7 @@ const IconView: FC = (props) => {
             <div className="name">
               133follow02
             </div>
-            <div className="code-name">.icon133follow02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon133follow02
             </div>
           </li>
           
@@ -1962,7 +1959,7 @@ const IconView: FC = (props) => {
             <div className="name">
               363
             </div>
-            <div className="code-name">.icon363
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon363
             </div>
           </li>
           
@@ -1971,7 +1968,7 @@ const IconView: FC = (props) => {
             <div className="name">
               120menu02
             </div>
-            <div className="code-name">.icon120menu02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon120menu02
             </div>
           </li>
           
@@ -1980,7 +1977,7 @@ const IconView: FC = (props) => {
             <div className="name">
               369
             </div>
-            <div className="code-name">.icon369
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon369
             </div>
           </li>
           
@@ -1989,7 +1986,7 @@ const IconView: FC = (props) => {
             <div className="name">
               082arrowXY05
             </div>
-            <div className="code-name">.icon082arrowXY05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon082arrowXY05
             </div>
           </li>
           
@@ -1998,7 +1995,7 @@ const IconView: FC = (props) => {
             <div className="name">
               346
             </div>
-            <div className="code-name">.icon346
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon346
             </div>
           </li>
           
@@ -2007,7 +2004,7 @@ const IconView: FC = (props) => {
             <div className="name">
               115unlock
             </div>
-            <div className="code-name">.icon115unlock
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon115unlock
             </div>
           </li>
           
@@ -2016,7 +2013,7 @@ const IconView: FC = (props) => {
             <div className="name">
               368
             </div>
-            <div className="code-name">.icon368
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon368
             </div>
           </li>
           
@@ -2025,7 +2022,7 @@ const IconView: FC = (props) => {
             <div className="name">
               109bell
             </div>
-            <div className="code-name">.icon109bell
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon109bell
             </div>
           </li>
           
@@ -2034,7 +2031,7 @@ const IconView: FC = (props) => {
             <div className="name">
               367
             </div>
-            <div className="code-name">.icon367
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon367
             </div>
           </li>
           
@@ -2043,7 +2040,7 @@ const IconView: FC = (props) => {
             <div className="name">
               119menu01
             </div>
-            <div className="code-name">.icon119menu01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon119menu01
             </div>
           </li>
           
@@ -2052,7 +2049,7 @@ const IconView: FC = (props) => {
             <div className="name">
               372
             </div>
-            <div className="code-name">.icon372
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon372
             </div>
           </li>
           
@@ -2061,7 +2058,7 @@ const IconView: FC = (props) => {
             <div className="name">
               127voice01
             </div>
-            <div className="code-name">.icon127voice01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon127voice01
             </div>
           </li>
           
@@ -2070,7 +2067,7 @@ const IconView: FC = (props) => {
             <div className="name">
               364
             </div>
-            <div className="code-name">.icon364
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon364
             </div>
           </li>
           
@@ -2079,7 +2076,7 @@ const IconView: FC = (props) => {
             <div className="name">
               104userXZ
             </div>
-            <div className="code-name">.icon104userXZ
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon104userXZ
             </div>
           </li>
           
@@ -2088,7 +2085,7 @@ const IconView: FC = (props) => {
             <div className="name">
               373
             </div>
-            <div className="code-name">.icon373
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon373
             </div>
           </li>
           
@@ -2097,7 +2094,7 @@ const IconView: FC = (props) => {
             <div className="name">
               132follow01
             </div>
-            <div className="code-name">.icon132follow01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon132follow01
             </div>
           </li>
           
@@ -2106,7 +2103,7 @@ const IconView: FC = (props) => {
             <div className="name">
               362
             </div>
-            <div className="code-name">.icon362
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon362
             </div>
           </li>
           
@@ -2115,7 +2112,7 @@ const IconView: FC = (props) => {
             <div className="name">
               139star01
             </div>
-            <div className="code-name">.icon139star01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon139star01
             </div>
           </li>
           
@@ -2124,7 +2121,7 @@ const IconView: FC = (props) => {
             <div className="name">
               306hollowcircle
             </div>
-            <div className="code-name">.icon306hollowcircle
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon306hollowcircle
             </div>
           </li>
           
@@ -2133,7 +2130,7 @@ const IconView: FC = (props) => {
             <div className="name">
               137step01
             </div>
-            <div className="code-name">.icon137step01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon137step01
             </div>
           </li>
           
@@ -2142,7 +2139,7 @@ const IconView: FC = (props) => {
             <div className="name">
               314align horizontal center
             </div>
-            <div className="code-name">.icon314alignhorizontalcenter
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon314alignhorizontalcenter
             </div>
           </li>
           
@@ -2151,7 +2148,7 @@ const IconView: FC = (props) => {
             <div className="name">
               121menu03
             </div>
-            <div className="code-name">.icon121menu03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon121menu03
             </div>
           </li>
           
@@ -2160,7 +2157,7 @@ const IconView: FC = (props) => {
             <div className="name">
               366
             </div>
-            <div className="code-name">.icon366
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon366
             </div>
           </li>
           
@@ -2169,7 +2166,7 @@ const IconView: FC = (props) => {
             <div className="name">
               080arrowXY03
             </div>
-            <div className="code-name">.icon080arrowXY03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon080arrowXY03
             </div>
           </li>
           
@@ -2178,7 +2175,7 @@ const IconView: FC = (props) => {
             <div className="name">
               333
             </div>
-            <div className="code-name">.icon333
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon333
             </div>
           </li>
           
@@ -2187,7 +2184,7 @@ const IconView: FC = (props) => {
             <div className="name">
               076arrowXY02
             </div>
-            <div className="code-name">.icon076arrowXY02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon076arrowXY02
             </div>
           </li>
           
@@ -2196,7 +2193,7 @@ const IconView: FC = (props) => {
             <div className="name">
               335
             </div>
-            <div className="code-name">.icon335
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon335
             </div>
           </li>
           
@@ -2205,7 +2202,7 @@ const IconView: FC = (props) => {
             <div className="name">
               125sound
             </div>
-            <div className="code-name">.icon125sound
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon125sound
             </div>
           </li>
           
@@ -2214,7 +2211,7 @@ const IconView: FC = (props) => {
             <div className="name">
               348
             </div>
-            <div className="code-name">.icon348
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon348
             </div>
           </li>
           
@@ -2223,7 +2220,7 @@ const IconView: FC = (props) => {
             <div className="name">
               110camera
             </div>
-            <div className="code-name">.icon110camera
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon110camera
             </div>
           </li>
           
@@ -2232,7 +2229,7 @@ const IconView: FC = (props) => {
             <div className="name">
               370
             </div>
-            <div className="code-name">.icon370
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon370
             </div>
           </li>
           
@@ -2241,7 +2238,7 @@ const IconView: FC = (props) => {
             <div className="name">
               131keyboard
             </div>
-            <div className="code-name">.icon131keyboard
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon131keyboard
             </div>
           </li>
           
@@ -2250,7 +2247,7 @@ const IconView: FC = (props) => {
             <div className="name">
               124notice
             </div>
-            <div className="code-name">.icon124notice
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon124notice
             </div>
           </li>
           
@@ -2259,7 +2256,7 @@ const IconView: FC = (props) => {
             <div className="name">
               130wifi
             </div>
-            <div className="code-name">.icon130wifi
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon130wifi
             </div>
           </li>
           
@@ -2268,7 +2265,7 @@ const IconView: FC = (props) => {
             <div className="name">
               108share
             </div>
-            <div className="code-name">.icon108share
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon108share
             </div>
           </li>
           
@@ -2277,7 +2274,7 @@ const IconView: FC = (props) => {
             <div className="name">
               107meeting
             </div>
-            <div className="code-name">.icon107meeting
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon107meeting
             </div>
           </li>
           
@@ -2286,7 +2283,7 @@ const IconView: FC = (props) => {
             <div className="name">
               152error40401
             </div>
-            <div className="code-name">.icon152error40401
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon152error40401
             </div>
           </li>
           
@@ -2295,7 +2292,7 @@ const IconView: FC = (props) => {
             <div className="name">
               141send
             </div>
-            <div className="code-name">.icon141send
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon141send
             </div>
           </li>
           
@@ -2304,7 +2301,7 @@ const IconView: FC = (props) => {
             <div className="name">
               304curve
             </div>
-            <div className="code-name">.icon304curve
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon304curve
             </div>
           </li>
           
@@ -2313,7 +2310,7 @@ const IconView: FC = (props) => {
             <div className="name">
               154copy
             </div>
-            <div className="code-name">.icon154copy
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon154copy
             </div>
           </li>
           
@@ -2322,7 +2319,7 @@ const IconView: FC = (props) => {
             <div className="name">
               320Horizontal Centers
             </div>
-            <div className="code-name">.icon320HorizontalCenters
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon320HorizontalCenters
             </div>
           </li>
           
@@ -2331,7 +2328,7 @@ const IconView: FC = (props) => {
             <div className="name">
               149emoticon02
             </div>
-            <div className="code-name">.icon149emoticon02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon149emoticon02
             </div>
           </li>
           
@@ -2340,7 +2337,7 @@ const IconView: FC = (props) => {
             <div className="name">
               338
             </div>
-            <div className="code-name">.icon338
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon338
             </div>
           </li>
           
@@ -2349,7 +2346,7 @@ const IconView: FC = (props) => {
             <div className="name">
               157clipboard
             </div>
-            <div className="code-name">.icon157clipboard
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon157clipboard
             </div>
           </li>
           
@@ -2358,7 +2355,7 @@ const IconView: FC = (props) => {
             <div className="name">
               148emoticon01
             </div>
-            <div className="code-name">.icon148emoticon01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon148emoticon01
             </div>
           </li>
           
@@ -2367,7 +2364,7 @@ const IconView: FC = (props) => {
             <div className="name">
               145message03
             </div>
-            <div className="code-name">.icon145message03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon145message03
             </div>
           </li>
           
@@ -2376,7 +2373,7 @@ const IconView: FC = (props) => {
             <div className="name">
               123power
             </div>
-            <div className="code-name">.icon123power
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon123power
             </div>
           </li>
           
@@ -2385,7 +2382,7 @@ const IconView: FC = (props) => {
             <div className="name">
               135good01
             </div>
-            <div className="code-name">.icon135good01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon135good01
             </div>
           </li>
           
@@ -2394,7 +2391,7 @@ const IconView: FC = (props) => {
             <div className="name">
               165ranking
             </div>
-            <div className="code-name">.icon165ranking
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon165ranking
             </div>
           </li>
           
@@ -2403,7 +2400,7 @@ const IconView: FC = (props) => {
             <div className="name">
               147message05
             </div>
-            <div className="code-name">.icon147message05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon147message05
             </div>
           </li>
           
@@ -2412,7 +2409,7 @@ const IconView: FC = (props) => {
             <div className="name">
               143message01
             </div>
-            <div className="code-name">.icon143message01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon143message01
             </div>
           </li>
           
@@ -2421,7 +2418,7 @@ const IconView: FC = (props) => {
             <div className="name">
               171excel
             </div>
-            <div className="code-name">.icon171excel
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon171excel
             </div>
           </li>
           
@@ -2430,7 +2427,7 @@ const IconView: FC = (props) => {
             <div className="name">
               114lock
             </div>
-            <div className="code-name">.icon114lock
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon114lock
             </div>
           </li>
           
@@ -2439,7 +2436,7 @@ const IconView: FC = (props) => {
             <div className="name">
               122find
             </div>
-            <div className="code-name">.icon122find
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon122find
             </div>
           </li>
           
@@ -2448,7 +2445,7 @@ const IconView: FC = (props) => {
             <div className="name">
               153error40402
             </div>
-            <div className="code-name">.icon153error40402
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon153error40402
             </div>
           </li>
           
@@ -2457,7 +2454,7 @@ const IconView: FC = (props) => {
             <div className="name">
               163submit
             </div>
-            <div className="code-name">.icon163submit
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon163submit
             </div>
           </li>
           
@@ -2466,7 +2463,7 @@ const IconView: FC = (props) => {
             <div className="name">
               151emoticon04
             </div>
-            <div className="code-name">.icon151emoticon04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon151emoticon04
             </div>
           </li>
           
@@ -2475,7 +2472,7 @@ const IconView: FC = (props) => {
             <div className="name">
               177file
             </div>
-            <div className="code-name">.icon177file
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon177file
             </div>
           </li>
           
@@ -2484,7 +2481,7 @@ const IconView: FC = (props) => {
             <div className="name">
               175xml
             </div>
-            <div className="code-name">.icon175xml
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon175xml
             </div>
           </li>
           
@@ -2493,7 +2490,7 @@ const IconView: FC = (props) => {
             <div className="name">
               169paper
             </div>
-            <div className="code-name">.icon169paper
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon169paper
             </div>
           </li>
           
@@ -2502,7 +2499,7 @@ const IconView: FC = (props) => {
             <div className="name">
               159examine
             </div>
-            <div className="code-name">.icon159examine
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon159examine
             </div>
           </li>
           
@@ -2511,7 +2508,7 @@ const IconView: FC = (props) => {
             <div className="name">
               160task01
             </div>
-            <div className="code-name">.icon160task01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon160task01
             </div>
           </li>
           
@@ -2520,7 +2517,7 @@ const IconView: FC = (props) => {
             <div className="name">
               179chartZ
             </div>
-            <div className="code-name">.icon179chartZ
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon179chartZ
             </div>
           </li>
           
@@ -2529,7 +2526,7 @@ const IconView: FC = (props) => {
             <div className="name">
               155cut
             </div>
-            <div className="code-name">.icon155cut
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon155cut
             </div>
           </li>
           
@@ -2538,7 +2535,7 @@ const IconView: FC = (props) => {
             <div className="name">
               167list02
             </div>
-            <div className="code-name">.icon167list02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon167list02
             </div>
           </li>
           
@@ -2547,7 +2544,7 @@ const IconView: FC = (props) => {
             <div className="name">
               173pdf
             </div>
-            <div className="code-name">.icon173pdf
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon173pdf
             </div>
           </li>
           
@@ -2556,7 +2553,7 @@ const IconView: FC = (props) => {
             <div className="name">
               138step02
             </div>
-            <div className="code-name">.icon138step02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon138step02
             </div>
           </li>
           
@@ -2565,7 +2562,7 @@ const IconView: FC = (props) => {
             <div className="name">
               134appoint
             </div>
-            <div className="code-name">.icon134appoint
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon134appoint
             </div>
           </li>
           
@@ -2574,7 +2571,7 @@ const IconView: FC = (props) => {
             <div className="name">
               136good02
             </div>
-            <div className="code-name">.icon136good02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon136good02
             </div>
           </li>
           
@@ -2583,7 +2580,7 @@ const IconView: FC = (props) => {
             <div className="name">
               144message02
             </div>
-            <div className="code-name">.icon144message02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon144message02
             </div>
           </li>
           
@@ -2592,7 +2589,7 @@ const IconView: FC = (props) => {
             <div className="name">
               162task03
             </div>
-            <div className="code-name">.icon162task03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon162task03
             </div>
           </li>
           
@@ -2601,7 +2598,7 @@ const IconView: FC = (props) => {
             <div className="name">
               187grid
             </div>
-            <div className="code-name">.icon187grid
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon187grid
             </div>
           </li>
           
@@ -2610,7 +2607,7 @@ const IconView: FC = (props) => {
             <div className="name">
               161task02
             </div>
-            <div className="code-name">.icon161task02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon161task02
             </div>
           </li>
           
@@ -2619,7 +2616,7 @@ const IconView: FC = (props) => {
             <div className="name">
               126mute
             </div>
-            <div className="code-name">.icon126mute
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon126mute
             </div>
           </li>
           
@@ -2628,7 +2625,7 @@ const IconView: FC = (props) => {
             <div className="name">
               191clock
             </div>
-            <div className="code-name">.icon191clock
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon191clock
             </div>
           </li>
           
@@ -2637,7 +2634,7 @@ const IconView: FC = (props) => {
             <div className="name">
               178restore
             </div>
-            <div className="code-name">.icon178restore
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon178restore
             </div>
           </li>
           
@@ -2646,7 +2643,7 @@ const IconView: FC = (props) => {
             <div className="name">
               185statistics
             </div>
-            <div className="code-name">.icon185statistics
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon185statistics
             </div>
           </li>
           
@@ -2655,7 +2652,7 @@ const IconView: FC = (props) => {
             <div className="name">
               201printer
             </div>
-            <div className="code-name">.icon201printer
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon201printer
             </div>
           </li>
           
@@ -2664,7 +2661,7 @@ const IconView: FC = (props) => {
             <div className="name">
               182chartB02
             </div>
-            <div className="code-name">.icon182chartB02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon182chartB02
             </div>
           </li>
           
@@ -2673,7 +2670,7 @@ const IconView: FC = (props) => {
             <div className="name">
               181chartB01
             </div>
-            <div className="code-name">.icon181chartB01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon181chartB01
             </div>
           </li>
           
@@ -2682,7 +2679,7 @@ const IconView: FC = (props) => {
             <div className="name">
               195keyword
             </div>
-            <div className="code-name">.icon195keyword
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon195keyword
             </div>
           </li>
           
@@ -2691,7 +2688,7 @@ const IconView: FC = (props) => {
             <div className="name">
               189flow
             </div>
-            <div className="code-name">.icon189flow
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon189flow
             </div>
           </li>
           
@@ -2700,7 +2697,7 @@ const IconView: FC = (props) => {
             <div className="name">
               199book01
             </div>
-            <div className="code-name">.icon199book01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon199book01
             </div>
           </li>
           
@@ -2709,7 +2706,7 @@ const IconView: FC = (props) => {
             <div className="name">
               142light
             </div>
-            <div className="code-name">.icon142light
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon142light
             </div>
           </li>
           
@@ -2718,7 +2715,7 @@ const IconView: FC = (props) => {
             <div className="name">
               164sort
             </div>
-            <div className="code-name">.icon164sort
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon164sort
             </div>
           </li>
           
@@ -2727,7 +2724,7 @@ const IconView: FC = (props) => {
             <div className="name">
               168tag01
             </div>
-            <div className="code-name">.icon168tag01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon168tag01
             </div>
           </li>
           
@@ -2736,7 +2733,7 @@ const IconView: FC = (props) => {
             <div className="name">
               205count
             </div>
-            <div className="code-name">.icon205count
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon205count
             </div>
           </li>
           
@@ -2745,7 +2742,7 @@ const IconView: FC = (props) => {
             <div className="name">
               197hourglass01
             </div>
-            <div className="code-name">.icon197hourglass01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon197hourglass01
             </div>
           </li>
           
@@ -2754,7 +2751,7 @@ const IconView: FC = (props) => {
             <div className="name">
               166list01
             </div>
-            <div className="code-name">.icon166list01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon166list01
             </div>
           </li>
           
@@ -2763,7 +2760,7 @@ const IconView: FC = (props) => {
             <div className="name">
               156paste
             </div>
-            <div className="code-name">.icon156paste
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon156paste
             </div>
           </li>
           
@@ -2772,7 +2769,7 @@ const IconView: FC = (props) => {
             <div className="name">
               203enclosure
             </div>
-            <div className="code-name">.icon203enclosure
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon203enclosure
             </div>
           </li>
           
@@ -2781,7 +2778,7 @@ const IconView: FC = (props) => {
             <div className="name">
               193clothes
             </div>
-            <div className="code-name">.icon193clothes
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon193clothes
             </div>
           </li>
           
@@ -2790,7 +2787,7 @@ const IconView: FC = (props) => {
             <div className="name">
               183chartZH01
             </div>
-            <div className="code-name">.icon183chartZH01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon183chartZH01
             </div>
           </li>
           
@@ -2799,7 +2796,7 @@ const IconView: FC = (props) => {
             <div className="name">
               194tag02
             </div>
-            <div className="code-name">.icon194tag02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon194tag02
             </div>
           </li>
           
@@ -2808,7 +2805,7 @@ const IconView: FC = (props) => {
             <div className="name">
               211money04
             </div>
-            <div className="code-name">.icon211money04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon211money04
             </div>
           </li>
           
@@ -2817,7 +2814,7 @@ const IconView: FC = (props) => {
             <div className="name">
               207calculator02
             </div>
-            <div className="code-name">.icon207calculator02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon207calculator02
             </div>
           </li>
           
@@ -2826,7 +2823,7 @@ const IconView: FC = (props) => {
             <div className="name">
               174txt
             </div>
-            <div className="code-name">.icon174txt
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon174txt
             </div>
           </li>
           
@@ -2835,7 +2832,7 @@ const IconView: FC = (props) => {
             <div className="name">
               213trophy02
             </div>
-            <div className="code-name">.icon213trophy02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon213trophy02
             </div>
           </li>
           
@@ -2844,7 +2841,7 @@ const IconView: FC = (props) => {
             <div className="name">
               170word
             </div>
-            <div className="code-name">.icon170word
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon170word
             </div>
           </li>
           
@@ -2853,7 +2850,7 @@ const IconView: FC = (props) => {
             <div className="name">
               225scan
             </div>
-            <div className="code-name">.icon225scan
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon225scan
             </div>
           </li>
           
@@ -2862,7 +2859,7 @@ const IconView: FC = (props) => {
             <div className="name">
               206calculator01
             </div>
-            <div className="code-name">.icon206calculator01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon206calculator01
             </div>
           </li>
           
@@ -2871,7 +2868,7 @@ const IconView: FC = (props) => {
             <div className="name">
               150emoticon03
             </div>
-            <div className="code-name">.icon150emoticon03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon150emoticon03
             </div>
           </li>
           
@@ -2880,7 +2877,7 @@ const IconView: FC = (props) => {
             <div className="name">
               158batch
             </div>
-            <div className="code-name">.icon158batch
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon158batch
             </div>
           </li>
           
@@ -2889,7 +2886,7 @@ const IconView: FC = (props) => {
             <div className="name">
               112video01
             </div>
-            <div className="code-name">.icon112video01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon112video01
             </div>
           </li>
           
@@ -2898,7 +2895,7 @@ const IconView: FC = (props) => {
             <div className="name">
               221computer
             </div>
-            <div className="code-name">.icon221computer
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon221computer
             </div>
           </li>
           
@@ -2907,7 +2904,7 @@ const IconView: FC = (props) => {
             <div className="name">
               198hourglass02
             </div>
-            <div className="code-name">.icon198hourglass02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon198hourglass02
             </div>
           </li>
           
@@ -2916,7 +2913,7 @@ const IconView: FC = (props) => {
             <div className="name">
               172ppt
             </div>
-            <div className="code-name">.icon172ppt
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon172ppt
             </div>
           </li>
           
@@ -2925,7 +2922,7 @@ const IconView: FC = (props) => {
             <div className="name">
               190tree
             </div>
-            <div className="code-name">.icon190tree
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon190tree
             </div>
           </li>
           
@@ -2934,7 +2931,7 @@ const IconView: FC = (props) => {
             <div className="name">
               217shield03
             </div>
-            <div className="code-name">.icon217shield03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon217shield03
             </div>
           </li>
           
@@ -2943,7 +2940,7 @@ const IconView: FC = (props) => {
             <div className="name">
               209money02
             </div>
-            <div className="code-name">.icon209money02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon209money02
             </div>
           </li>
           
@@ -2952,7 +2949,7 @@ const IconView: FC = (props) => {
             <div className="name">
               219shield05
             </div>
-            <div className="code-name">.icon219shield05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon219shield05
             </div>
           </li>
           
@@ -2961,7 +2958,7 @@ const IconView: FC = (props) => {
             <div className="name">
               233logoZH01
             </div>
-            <div className="code-name">.icon233logoZH01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon233logoZH01
             </div>
           </li>
           
@@ -2970,7 +2967,7 @@ const IconView: FC = (props) => {
             <div className="name">
               146message04
             </div>
-            <div className="code-name">.icon146message04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon146message04
             </div>
           </li>
           
@@ -2979,7 +2976,7 @@ const IconView: FC = (props) => {
             <div className="name">
               215shield01
             </div>
-            <div className="code-name">.icon215shield01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon215shield01
             </div>
           </li>
           
@@ -2988,7 +2985,7 @@ const IconView: FC = (props) => {
             <div className="name">
               176zip
             </div>
-            <div className="code-name">.icon176zip
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon176zip
             </div>
           </li>
           
@@ -2997,7 +2994,7 @@ const IconView: FC = (props) => {
             <div className="name">
               186layout
             </div>
-            <div className="code-name">.icon186layout
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon186layout
             </div>
           </li>
           
@@ -3006,7 +3003,7 @@ const IconView: FC = (props) => {
             <div className="name">
               210money03
             </div>
-            <div className="code-name">.icon210money03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon210money03
             </div>
           </li>
           
@@ -3015,7 +3012,7 @@ const IconView: FC = (props) => {
             <div className="name">
               229circlePY
             </div>
-            <div className="code-name">.icon229circlePY
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon229circlePY
             </div>
           </li>
           
@@ -3024,7 +3021,7 @@ const IconView: FC = (props) => {
             <div className="name">
               214integral
             </div>
-            <div className="code-name">.icon214integral
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon214integral
             </div>
           </li>
           
@@ -3033,7 +3030,7 @@ const IconView: FC = (props) => {
             <div className="name">
               241user04
             </div>
-            <div className="code-name">.icon241user04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon241user04
             </div>
           </li>
           
@@ -3042,7 +3039,7 @@ const IconView: FC = (props) => {
             <div className="name">
               227wechat
             </div>
-            <div className="code-name">.icon227wechat
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon227wechat
             </div>
           </li>
           
@@ -3051,7 +3048,7 @@ const IconView: FC = (props) => {
             <div className="name">
               237chartLD
             </div>
-            <div className="code-name">.icon237chartLD
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon237chartLD
             </div>
           </li>
           
@@ -3060,7 +3057,7 @@ const IconView: FC = (props) => {
             <div className="name">
               242arrowXS05
             </div>
-            <div className="code-name">.icon242arrowXS05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon242arrowXS05
             </div>
           </li>
           
@@ -3069,7 +3066,7 @@ const IconView: FC = (props) => {
             <div className="name">
               250power01
             </div>
-            <div className="code-name">.icon250power01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon250power01
             </div>
           </li>
           
@@ -3078,7 +3075,7 @@ const IconView: FC = (props) => {
             <div className="name">
               245arrowXY06
             </div>
-            <div className="code-name">.icon245arrowXY06
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon245arrowXY06
             </div>
           </li>
           
@@ -3087,7 +3084,7 @@ const IconView: FC = (props) => {
             <div className="name">
               223shake
             </div>
-            <div className="code-name">.icon223shake
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon223shake
             </div>
           </li>
           
@@ -3096,7 +3093,7 @@ const IconView: FC = (props) => {
             <div className="name">
               202seal
             </div>
-            <div className="code-name">.icon202seal
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon202seal
             </div>
           </li>
           
@@ -3105,7 +3102,7 @@ const IconView: FC = (props) => {
             <div className="name">
               243arrowXX05
             </div>
-            <div className="code-name">.icon243arrowXX05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon243arrowXX05
             </div>
           </li>
           
@@ -3114,7 +3111,7 @@ const IconView: FC = (props) => {
             <div className="name">
               253question01
             </div>
-            <div className="code-name">.icon253question01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon253question01
             </div>
           </li>
           
@@ -3123,7 +3120,7 @@ const IconView: FC = (props) => {
             <div className="name">
               216shield02
             </div>
-            <div className="code-name">.icon216shield02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon216shield02
             </div>
           </li>
           
@@ -3132,7 +3129,7 @@ const IconView: FC = (props) => {
             <div className="name">
               222mobilephone
             </div>
-            <div className="code-name">.icon222mobilephone
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon222mobilephone
             </div>
           </li>
           
@@ -3141,7 +3138,7 @@ const IconView: FC = (props) => {
             <div className="name">
               218shield04
             </div>
-            <div className="code-name">.icon218shield04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon218shield04
             </div>
           </li>
           
@@ -3150,7 +3147,7 @@ const IconView: FC = (props) => {
             <div className="name">
               239menu04
             </div>
-            <div className="code-name">.icon239menu04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon239menu04
             </div>
           </li>
           
@@ -3159,7 +3156,7 @@ const IconView: FC = (props) => {
             <div className="name">
               255check04
             </div>
-            <div className="code-name">.icon255check04
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon255check04
             </div>
           </li>
           
@@ -3168,7 +3165,7 @@ const IconView: FC = (props) => {
             <div className="name">
               235chartSD
             </div>
-            <div className="code-name">.icon235chartSD
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon235chartSD
             </div>
           </li>
           
@@ -3177,7 +3174,7 @@ const IconView: FC = (props) => {
             <div className="name">
               128voice02
             </div>
-            <div className="code-name">.icon128voice02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon128voice02
             </div>
           </li>
           
@@ -3186,7 +3183,7 @@ const IconView: FC = (props) => {
             <div className="name">
               192prompt
             </div>
-            <div className="code-name">.icon192prompt
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon192prompt
             </div>
           </li>
           
@@ -3195,7 +3192,7 @@ const IconView: FC = (props) => {
             <div className="name">
               140star02
             </div>
-            <div className="code-name">.icon140star02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon140star02
             </div>
           </li>
           
@@ -3204,7 +3201,7 @@ const IconView: FC = (props) => {
             <div className="name">
               254notification01
             </div>
-            <div className="code-name">.icon254notification01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon254notification01
             </div>
           </li>
           
@@ -3213,7 +3210,7 @@ const IconView: FC = (props) => {
             <div className="name">
               261microphone
             </div>
-            <div className="code-name">.icon261microphone
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon261microphone
             </div>
           </li>
           
@@ -3222,7 +3219,7 @@ const IconView: FC = (props) => {
             <div className="name">
               265plus06
             </div>
-            <div className="code-name">.icon265plus06
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon265plus06
             </div>
           </li>
           
@@ -3231,7 +3228,7 @@ const IconView: FC = (props) => {
             <div className="name">
               269calendar03
             </div>
-            <div className="code-name">.icon269calendar03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon269calendar03
             </div>
           </li>
           
@@ -3240,7 +3237,7 @@ const IconView: FC = (props) => {
             <div className="name">
               249arrowXY07
             </div>
-            <div className="code-name">.icon249arrowXY07
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon249arrowXY07
             </div>
           </li>
           
@@ -3249,7 +3246,7 @@ const IconView: FC = (props) => {
             <div className="name">
               180chartX
             </div>
-            <div className="code-name">.icon180chartX
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon180chartX
             </div>
           </li>
           
@@ -3258,7 +3255,7 @@ const IconView: FC = (props) => {
             <div className="name">
               224shock
             </div>
-            <div className="code-name">.icon224shock
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon224shock
             </div>
           </li>
           
@@ -3267,7 +3264,7 @@ const IconView: FC = (props) => {
             <div className="name">
               184chartZH02
             </div>
-            <div className="code-name">.icon184chartZH02
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon184chartZH02
             </div>
           </li>
           
@@ -3276,7 +3273,7 @@ const IconView: FC = (props) => {
             <div className="name">
               188table
             </div>
-            <div className="code-name">.icon188table
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon188table
             </div>
           </li>
           
@@ -3285,7 +3282,7 @@ const IconView: FC = (props) => {
             <div className="name">
               263star03
             </div>
-            <div className="code-name">.icon263star03
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon263star03
             </div>
           </li>
           
@@ -3294,7 +3291,7 @@ const IconView: FC = (props) => {
             <div className="name">
               257arrowXZ08
             </div>
-            <div className="code-name">.icon257arrowXZ08
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon257arrowXZ08
             </div>
           </li>
           
@@ -3303,7 +3300,7 @@ const IconView: FC = (props) => {
             <div className="name">
               262menu05
             </div>
-            <div className="code-name">.icon262menu05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon262menu05
             </div>
           </li>
           
@@ -3312,7 +3309,7 @@ const IconView: FC = (props) => {
             <div className="name">
               277clock
             </div>
-            <div className="code-name">.icon277clock
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon277clock
             </div>
           </li>
           
@@ -3321,7 +3318,7 @@ const IconView: FC = (props) => {
             <div className="name">
               259send01
             </div>
-            <div className="code-name">.icon259send01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon259send01
             </div>
           </li>
           
@@ -3330,7 +3327,7 @@ const IconView: FC = (props) => {
             <div className="name">
               camera-fill
             </div>
-            <div className="code-name">.iconcamera-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconcamera-fill
             </div>
           </li>
           
@@ -3339,7 +3336,7 @@ const IconView: FC = (props) => {
             <div className="name">
               267layoutTZ
             </div>
-            <div className="code-name">.icon267layoutTZ
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon267layoutTZ
             </div>
           </li>
           
@@ -3348,7 +3345,7 @@ const IconView: FC = (props) => {
             <div className="name">
               card-fill
             </div>
-            <div className="code-name">.iconcard-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconcard-fill
             </div>
           </li>
           
@@ -3357,7 +3354,7 @@ const IconView: FC = (props) => {
             <div className="name">
               232Android
             </div>
-            <div className="code-name">.icon232Android
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon232Android
             </div>
           </li>
           
@@ -3366,7 +3363,7 @@ const IconView: FC = (props) => {
             <div className="name">
               cart-fill
             </div>
-            <div className="code-name">.iconcart-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconcart-fill
             </div>
           </li>
           
@@ -3375,7 +3372,7 @@ const IconView: FC = (props) => {
             <div className="name">
               270imagePS
             </div>
-            <div className="code-name">.icon270imagePS
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon270imagePS
             </div>
           </li>
           
@@ -3384,7 +3381,7 @@ const IconView: FC = (props) => {
             <div className="name">
               good-fill
             </div>
-            <div className="code-name">.icongood-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icongood-fill
             </div>
           </li>
           
@@ -3393,7 +3390,7 @@ const IconView: FC = (props) => {
             <div className="name">
               273route
             </div>
-            <div className="code-name">.icon273route
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon273route
             </div>
           </li>
           
@@ -3402,7 +3399,7 @@ const IconView: FC = (props) => {
             <div className="name">
               copy-fill
             </div>
-            <div className="code-name">.iconcopy-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconcopy-fill
             </div>
           </li>
           
@@ -3411,7 +3408,7 @@ const IconView: FC = (props) => {
             <div className="name">
               271location05
             </div>
-            <div className="code-name">.icon271location05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon271location05
             </div>
           </li>
           
@@ -3420,7 +3417,7 @@ const IconView: FC = (props) => {
             <div className="name">
               day-fill
             </div>
-            <div className="code-name">.iconday-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconday-fill
             </div>
           </li>
           
@@ -3429,7 +3426,7 @@ const IconView: FC = (props) => {
             <div className="name">
               230mapBD
             </div>
-            <div className="code-name">.icon230mapBD
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon230mapBD
             </div>
           </li>
           
@@ -3438,7 +3435,7 @@ const IconView: FC = (props) => {
             <div className="name">
               bad-fill
             </div>
-            <div className="code-name">.iconbad-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconbad-fill
             </div>
           </li>
           
@@ -3447,7 +3444,7 @@ const IconView: FC = (props) => {
             <div className="name">
               283zhome05
             </div>
-            <div className="code-name">.icon283zhome05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon283zhome05
             </div>
           </li>
           
@@ -3456,7 +3453,7 @@ const IconView: FC = (props) => {
             <div className="name">
               img-fill
             </div>
-            <div className="code-name">.iconimg-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconimg-fill
             </div>
           </li>
           
@@ -3465,7 +3462,7 @@ const IconView: FC = (props) => {
             <div className="name">
               281earth
             </div>
-            <div className="code-name">.icon281earth
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon281earth
             </div>
           </li>
           
@@ -3474,7 +3471,7 @@ const IconView: FC = (props) => {
             <div className="name">
               hot-fill
             </div>
-            <div className="code-name">.iconhot-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconhot-fill
             </div>
           </li>
           
@@ -3483,7 +3480,7 @@ const IconView: FC = (props) => {
             <div className="name">
               247arrowXX05
             </div>
-            <div className="code-name">.icon247arrowXX05
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon247arrowXX05
             </div>
           </li>
           
@@ -3492,7 +3489,7 @@ const IconView: FC = (props) => {
             <div className="name">
               community-fill
             </div>
-            <div className="code-name">.iconcommunity-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconcommunity-fill
             </div>
           </li>
           
@@ -3501,7 +3498,7 @@ const IconView: FC = (props) => {
             <div className="name">
               279shield
             </div>
-            <div className="code-name">.icon279shield
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon279shield
             </div>
           </li>
           
@@ -3510,7 +3507,7 @@ const IconView: FC = (props) => {
             <div className="name">
               night-fill
             </div>
-            <div className="code-name">.iconnight-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconnight-fill
             </div>
           </li>
           
@@ -3519,7 +3516,7 @@ const IconView: FC = (props) => {
             <div className="name">
               231iOS
             </div>
-            <div className="code-name">.icon231iOS
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon231iOS
             </div>
           </li>
           
@@ -3528,7 +3525,7 @@ const IconView: FC = (props) => {
             <div className="name">
               safety-fill
             </div>
-            <div className="code-name">.iconsafety-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconsafety-fill
             </div>
           </li>
           
@@ -3537,7 +3534,7 @@ const IconView: FC = (props) => {
             <div className="name">
               246arrowXS06
             </div>
-            <div className="code-name">.icon246arrowXS06
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon246arrowXS06
             </div>
           </li>
           
@@ -3546,7 +3543,7 @@ const IconView: FC = (props) => {
             <div className="name">
               voice-fill
             </div>
-            <div className="code-name">.iconvoice-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconvoice-fill
             </div>
           </li>
           
@@ -3555,7 +3552,7 @@ const IconView: FC = (props) => {
             <div className="name">
               274remind
             </div>
-            <div className="code-name">.icon274remind
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon274remind
             </div>
           </li>
           
@@ -3564,7 +3561,7 @@ const IconView: FC = (props) => {
             <div className="name">
               ashbin-fill
             </div>
-            <div className="code-name">.iconashbin-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconashbin-fill
             </div>
           </li>
           
@@ -3573,7 +3570,7 @@ const IconView: FC = (props) => {
             <div className="name">
               285menu07
             </div>
-            <div className="code-name">.icon285menu07
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon285menu07
             </div>
           </li>
           
@@ -3582,7 +3579,7 @@ const IconView: FC = (props) => {
             <div className="name">
               position-fill
             </div>
-            <div className="code-name">.iconposition-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconposition-fill
             </div>
           </li>
           
@@ -3591,7 +3588,7 @@ const IconView: FC = (props) => {
             <div className="name">
               289folder01
             </div>
-            <div className="code-name">.icon289folder01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon289folder01
             </div>
           </li>
           
@@ -3600,7 +3597,7 @@ const IconView: FC = (props) => {
             <div className="name">
               home-fill
             </div>
-            <div className="code-name">.iconhome-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconhome-fill
             </div>
           </li>
           
@@ -3609,7 +3606,7 @@ const IconView: FC = (props) => {
             <div className="name">
               251setting01
             </div>
-            <div className="code-name">.icon251setting01
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon251setting01
             </div>
           </li>
           
@@ -3618,7 +3615,7 @@ const IconView: FC = (props) => {
             <div className="name">
               top-btn-fill
             </div>
-            <div className="code-name">.icontop-btn-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icontop-btn-fill
             </div>
           </li>
           
@@ -3627,7 +3624,7 @@ const IconView: FC = (props) => {
             <div className="name">
               275error
             </div>
-            <div className="code-name">.icon275error
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon275error
             </div>
           </li>
           
@@ -3636,7 +3633,7 @@ const IconView: FC = (props) => {
             <div className="name">
               left-btn-fill
             </div>
-            <div className="code-name">.iconleft-btn-fill
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconleft-btn-fill
             </div>
           </li>
           
@@ -3645,7 +3642,7 @@ const IconView: FC = (props) => {
             <div className="name">
               236chartYH
             </div>
-            <div className="code-name">.icon236chartYH
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icon236chartYH
             </div>
           </li>
           
@@ -3654,7 +3651,7 @@ const IconView: FC = (props) => {
             <div className="name">
               返回
             </div>
-            <div className="code-name">.iconfanhui
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconfanhui
             </div>
           </li>
           
@@ -3663,7 +3660,7 @@ const IconView: FC = (props) => {
             <div className="name">
               导航
             </div>
-            <div className="code-name">.icondaohang
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.icondaohang
             </div>
           </li>
           
@@ -3672,7 +3669,7 @@ const IconView: FC = (props) => {
             <div className="name">
               用户
             </div>
-            <div className="code-name">.iconyonghu
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconyonghu
             </div>
           </li>
           
@@ -3681,7 +3678,7 @@ const IconView: FC = (props) => {
             <div className="name">
               密码 copy
             </div>
-            <div className="code-name">.iconmimacopy
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconmimacopy
             </div>
           </li>
           
@@ -3690,7 +3687,7 @@ const IconView: FC = (props) => {
             <div className="name">
               关闭
             </div>
-            <div className="code-name">.iconclose
+            <div className="code-name" onClick={(e)=>copyIcon(e)}>.iconclose
             </div>
           </li>
           
@@ -3712,33 +3709,8 @@ const IconView: FC = (props) => {
         </thead>
         <tbody className="doc-body">
           <tr>
-            <td>size</td>
-            <td>button的规格</td>
-            <td>ButtonSize：string</td>
-            <td>Large = 'lg',
-              Small = 'sm'</td>
-          </tr>
-          <tr>
-            <td>disabled</td>
-            <td>是否禁用</td>
-            <td>boolean</td>
-            <td>true,false</td>
-          </tr>
-          <tr>
-            <td>btnType</td>
-            <td>button的类型</td>
-            <td>ButtonType：string</td>
-            <td>Primary = 'primary',Default = 'default',Danger = 'danger',Warning = 'warning',Success = 'success',Link = 'link'</td>
-          </tr>
-          <tr>
-            <td>children</td>
-            <td>Button标签中的子节点</td>
-            <td>React.ReactNode</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>href</td>
-            <td>跳转链接，只能用于btnType='link'</td>
+            <td>type</td>
+            <td>icon的类名</td>
             <td>string</td>
             <td>-</td>
           </tr>

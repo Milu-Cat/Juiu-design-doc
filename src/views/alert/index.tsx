@@ -37,7 +37,7 @@ const AlertView: FC = (props) => {
         </thead>
         <tbody className="doc-body">
           <tr>
-            <td>type</td>
+            <td>type?</td>
             <td>Alert的类型</td>
             <td>AlertType：string</td>
             <td>Danger = 'danger',
@@ -46,19 +46,19 @@ const AlertView: FC = (props) => {
               Info = 'info'</td>
           </tr>
           <tr>
-            <td>message</td>
+            <td>message?</td>
             <td>提示信息</td>
             <td>string</td>
             <td>-</td>
           </tr>
           <tr>
-            <td>description</td>
+            <td>description?</td>
             <td>描述</td>
             <td>string</td>
             <td>-</td>
           </tr>
           <tr>
-            <td>closable</td>
+            <td>closable?</td>
             <td>是否显示关闭按钮</td>
             <td>boolean</td>
             <td>true, false</td>
