@@ -3,16 +3,43 @@ import {Input} from 'juiu-design';
 import { useHistory, withRouter } from "react-router-dom";
 import { LoginContext } from './index';
 import classNames from 'classnames';
+import { Dispatch } from 'redux';
+import {useSelector, useDispatch, connect, ConnectOptions } from 'react-redux'
+import Store from '../../store';
+import { UserState } from '../../store/user';
 
 
 interface LoginFormOptions {
-  className: string
+  className: string,
+  value: UserState,
+  setLogin: (data: boolean) => void,
+  setAuthor: (data: string) => void,
 }
 
+interface stateOptions {
+  userReducer: UserState
+}
+
+const mapStateToProps = ( state:stateOptions ) => {
+  return {
+       value: state.userReducer
+   }
+} 
+
+const mapDispatchToProps = (dispatch: Dispatch ) => ({
+  dispatch,
+  setLogin: (data: boolean) => dispatch({ type: 'SET_LOGIN', state: data }),
+  setAuthor: (data: string) => dispatch({type: 'SET_AUTHOR', state: data })
+})
+
 const LoginForm: FC<LoginFormOptions> = (props) => {
-  const { className } = props
+  // console.log(props.setLogin)
+  const { className, value, setLogin, setAuthor } = props
+  // setLogin(true)
+  console.log(value)
   const [iconStyle, setIconStyle] = useState(-1)
   const [user, setUser] = useState("")
+  // const [login, setLoginState] = useState(value)
   const [password, setPassword] = useState("")
   const context = useContext(LoginContext)
   const changeLoad = context.ChangeLoad as (val: boolean) => void
@@ -47,6 +74,8 @@ const LoginForm: FC<LoginFormOptions> = (props) => {
       localStorage.setItem('jujiu-admin-user', user)
       history.push('/home')
       changeLoad(false)
+      setLogin(true)
+      setAuthor('jujiu')
     }, 500);
   }
   function toRegister() {
@@ -79,4 +108,5 @@ const LoginForm: FC<LoginFormOptions> = (props) => {
     </div>
   )
 }
-export default LoginForm
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
